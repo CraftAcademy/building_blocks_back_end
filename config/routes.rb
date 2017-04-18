@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :news, only: [:new]
+  resources :news, only: [:new, :create]
 
   namespace :api do
     namespace :v1 do

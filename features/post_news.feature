@@ -5,8 +5,8 @@ Feature: Post news
 
   Scenario: I create a new news post
     Given I am on the create news post page
-    Then I should see "New News"
+    Then I should see "Create a news message"
     And I fill in "Title" with "house fiesta"
-    And I fill in "Descripton" with "big burrito"
+    And I fill in "Description" with "big burrito"
     And I click "Submit"
     Then I should see "News post created!"

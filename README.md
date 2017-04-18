@@ -1,24 +1,34 @@
 # README
+# Building Blocks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is last project for CraftAcademy Class Feb-april 2017.
+It's an organizer tool for housing societies.
 
-Things you may want to cover:
+**Pivotal Tracker**
+[Pivotal Tracker for Building blocks](https://www.pivotaltracker.com/n/projects/2007795).
 
-* Ruby version
+**GitHub**
+This site base reside on [GitHub Pages](https://github.com/CraftAcademy/building_blocks_back_end).
 
-* System dependencies
+### Installing
+Install the pg driver:
+```
+gem install pg
+```
+On OS X with Homebrew:
+```
+gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+```
+On OS X with MacPorts:
+```
+gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+```
+On Windows:
+```
+gem install pg
+```
+Choose the win32 build.
+Install PostgreSQL and put its /bin directory on your path.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Configure Using Gemfile
+ gem 'pg'

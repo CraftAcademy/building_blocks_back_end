@@ -1,0 +1,15 @@
+%h3 Create a news message
+= form_for (@news) do |f|
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description
+  .actions
+    = f.submit "Submit"
+
+- if flash[:notice]
+  .notice= flash[:notice]

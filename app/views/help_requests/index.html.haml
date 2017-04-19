@@ -1,5 +1,5 @@
 %h3 Help request messages
 
-- @help_requests.each do |help|
+- @help_requests.last(20).each do |help|
   = help.title
   = help.message

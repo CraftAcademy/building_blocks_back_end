@@ -1,0 +1,23 @@
+%h3 Create a new facility
+= form_for (@facilities) do |f|
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description
+  .field
+    = f.label :rules
+    %br/
+    = f.text_field :rules
+  .field
+    = f.label :status
+    %br/
+    = f.text_field :status
+  .actions
+    = f.submit "Submit"
+
+- if flash[:notice]
+  .notice= flash[:notice]

@@ -13,9 +13,9 @@
     %br/
     = f.text_field :rules
   .field
-    = f.label :status
+    = f.label 'Available'
     %br/
-    = f.text_field :status
+    = f.check_box :status, 'accepted', false, disabled: true
   .actions
     = f.submit "Submit"
 

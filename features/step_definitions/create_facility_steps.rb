@@ -1,0 +1,7 @@
+Given(/^I am on the create news facility page$/) do
+  visit new_facility_path
+end
+
+Then(/^I check Available check box$/) do
+  check 'facility_status'
+end

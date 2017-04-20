@@ -8,7 +8,7 @@ Feature: Creat a new facility
     Then I should see "Create a new facility"
     And I fill in "Name" with "yard"
     And I fill in "Description" with "dog yard"
-    And I fill in "status" with "true"
-    And I fill in "rules" with "no dog's!!!"
+    And I fill in "Rules" with "no dog's!!!"
+    And I check Available check box
     And I click "Submit"
     Then I should see "New facility created!"

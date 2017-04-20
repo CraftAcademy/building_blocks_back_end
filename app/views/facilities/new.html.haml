@@ -15,7 +15,7 @@
   .field
     = f.label 'Available'
     %br/
-    = f.check_box :status, 'accepted', false, disabled: true
+    = f.check_box(:status,{}, true , false)
   .actions
     = f.submit "Submit"
 

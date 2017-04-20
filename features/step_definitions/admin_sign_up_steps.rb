@@ -1,3 +1,7 @@
-Given(/^I am on the registration page$/) do
-  visit new_admin_registration_path
+Given(/^I am on the index page$/) do
+  visit root_path
+end
+
+Given(/^I click link "([^"]*)"$/) do |link|
+  click_link link
 end

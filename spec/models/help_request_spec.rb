@@ -10,7 +10,6 @@ RSpec.describe HelpRequest, type: :model do
   describe 'Validations' do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :message }
-    it { is_expected.to validate_presence_of :urgent }
   end
 
   describe 'Factory' do

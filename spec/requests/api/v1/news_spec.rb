@@ -8,7 +8,7 @@ RSpec.describe Api::V1::NewsController, type: :request do
       get '/api/v1/news'
 
       expected_response = [{
-        'id' => news.id, 'title' => 'Utegångsförbud', 'description' => 'Juan'
+        'id' => news.id, 'title' => 'Utegångsförbud', 'description' => 'Juan', 'date' => news.created_at.strftime('%F %H:%M')
       }]
 
       expect(response_json).to eq expected_response

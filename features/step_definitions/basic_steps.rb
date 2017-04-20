@@ -17,3 +17,7 @@ end
 Then(/^show me the page$/) do
  save_and_open_page
 end
+
+Given(/^I am on the create news facility page$/) do
+  visit new_facilities_path
+end

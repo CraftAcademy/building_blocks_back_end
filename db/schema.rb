@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20170419114559) do
   create_table "help_requests", force: :cascade do |t|
     t.string   "title"
     t.string   "message"
-    t.boolean  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "urgent",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "news", force: :cascade do |t|

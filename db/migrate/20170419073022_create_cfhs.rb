@@ -3,7 +3,7 @@ class CreateCfhs < ActiveRecord::Migration[5.0]
     create_table :cfhs do |t|
       t.string :title
       t.string :message
-      t.boolean :status
+      t.boolean :urgent, default: false
 
       t.timestamps
     end

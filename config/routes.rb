@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  root controller: :index, action: :index
+
   resources :news, only: [:new, :create]
 
   resources :help_requests, only: [:index]

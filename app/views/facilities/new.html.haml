@@ -1,5 +1,5 @@
 %h3 Create a new facility
-= form_for (@facilities) do |f|
+= form_for (@facility) do |f|
   .field
     = f.label :name
     %br/
@@ -7,7 +7,7 @@
   .field
     = f.label :description
     %br/
-    = f.text_field :description
+    = f.text_area :description
   .field
     = f.label :rules
     %br/
@@ -15,9 +15,6 @@
   .field
     = f.label 'Available'
     %br/
-    = f.check_box(:status,{}, true , false)
+    = f.check_box(:status, {}, true, false)
   .actions
     = f.submit "Submit"
-
-- if flash[:notice]
-  .notice= flash[:notice]

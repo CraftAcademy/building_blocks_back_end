@@ -1,6 +1,6 @@
 class FacilitiesController < ApplicationController
   def new
-    @facilities = Facility.new
+    @facility = Facility.new
   end
 
   def create

@@ -23,10 +23,8 @@ Feature: Creat a new workorder
     Given I am on the show help request page
     And I click link "Fabian"
     Then I should see "Send work order"
-    Then show me the page
-    And I should see "Fabian"
+    And I should see "Fabian" in field "workorder_title"
     And I should see "Pants are gone"
-
     And I fill in "Location" with "Västervik"
     And I check Urgent check box
     And I click "Send"

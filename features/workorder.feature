@@ -12,7 +12,7 @@ Feature: Creat a new workorder
     Given I am on the show help request page
     And I click link "Fabian"
     Then I should see "Send work order"
-    And I fill in "Title" with "Johan"
+    And I fill in "Title" with "Fabian"
     And I fill in "Message" with "Pants are gone"
     And I fill in "Location" with "Västervik"
     And I check Urgent check box

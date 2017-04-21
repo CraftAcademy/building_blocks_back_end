@@ -1,3 +1,3 @@
 class Workorder < ApplicationRecord
-  validates_presence_of :title, :message, :location, :status
+  validates_presence_of :title, :message, :location
 end

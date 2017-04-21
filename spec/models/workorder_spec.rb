@@ -15,6 +15,10 @@ RSpec.describe Workorder, type: :model do
     it { is_expected.to validate_presence_of :location }
   end
 
+  describe 'Associations' do
+    it { is_expected.to have_one :help_request }
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(create(:workorder)).to be_valid

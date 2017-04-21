@@ -1,5 +1,5 @@
 %h3 Help request messages
 
 - @help_requests.each do |help|
-  = help.title
+  = link_to help.title, new_help_request_path
   = help.message

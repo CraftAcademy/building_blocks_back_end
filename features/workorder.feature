@@ -7,11 +7,10 @@ Feature: Creat a new workorder
    Given the following help request messages exist
     | title   | message           |
     | Fabian  | Pants are gone    |
-    | Casper  | Stuck in toilet   |
 
   Scenario: I create and send a work order
     Given I am on the show help request page
-    And I click "Fabian"
+    And I click link "Fabian"
     Then I should see "Send work order"
     And I fill in "Title" with "Johan"
     And I fill in "Message" with "Pants are gone"

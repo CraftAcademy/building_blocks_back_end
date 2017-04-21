@@ -16,5 +16,5 @@ Feature: Creat a new workorder
     And I fill in "Message" with "Pants are gone"
     And I fill in "Location" with "Västervik"
     And I check Urgent check box
-    And I click "Submit"
+    And I click "Send"
     Then I should see "New work order sent !!"

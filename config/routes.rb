@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :news, only: [:new, :create]
 
+  resources :workorders, only: [:new, :create]
   resources :help_requests, only: [:index]
   resources :facilities, only: [:new, :create]
 

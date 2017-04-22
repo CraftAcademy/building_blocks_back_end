@@ -1,18 +1,23 @@
-%h3 Hello! Welcome to Building blockz administration
-%table{:style => "width:100%"}
-  %tr
-    %th Urgent Help requests
-    %th Latest News
-    %th Work orders status
+%table{style: "width:100%"}
   %tr
     %th
-      Urgent Help requests
+      %h3 Urgent Help requests
+    %th
+      %h3 Latest News
+    %th
+      %h3 Work orders status
+  %tr
+    %th
       - @help_requests.each do |help|
-        = help.title
-        = help.message
+        .helpr
+          %h3
+            = help.title
+          = help.message
+          %span Urgent
     %th
-      Latest News
       - @news.each do |news|
-        = news.title
-        = news.description
+        .new
+          %h3
+            = news.title
+          = news.description
     %th Pending

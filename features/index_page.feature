@@ -15,7 +15,6 @@ Feature: add layout and information to index
 
     Scenario: Call for help messages are displayed
       Given I am on the index page
-      Then I should see "Home Sign up Help requests Facilities"
       And I should see "Fabian"
       And I should see "With peeing dog"
       And I should not see "Felix"

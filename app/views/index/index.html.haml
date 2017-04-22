@@ -5,6 +5,14 @@
     %th Latest News
     %th Work orders status
   %tr
-    %th Urgent Help requests
-    %th Latest News
+    %th
+      Urgent Help requests
+      - @help_requests.each do |help|
+        = help.title
+        = help.message
+    %th
+      Latest News
+      - @news.each do |news|
+        = news.title
+        = news.description
     %th Pending

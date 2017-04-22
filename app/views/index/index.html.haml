@@ -11,10 +11,10 @@
     %th
       - @help_requests.each do |help|
         .helpr
-          %h3
-            = help.title
+          %h3= help.title
           = help.message
-          %span Urgent
+          %br
+          = link_to 'Create work' , new_workorder_path(help.id), class: 'w_link'
     %th
       - @news.each do |news|
         .new

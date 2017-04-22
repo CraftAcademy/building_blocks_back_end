@@ -1,4 +1,4 @@
-Send work order
+%h3 Send work order
 - if @help_requests == nil
   = form_for(@workorder) do |f|
     .field
@@ -24,11 +24,11 @@ Send work order
     .field
       = f.label :title
       %br/
-      = f.text_field :title, :value => @help_requests.title
+      = f.text_field :title, value: @help_requests.title
     .field
       = f.label :message
       %br/
-      = f.text_area :message, :value => @help_requests.message
+      = f.text_area :message, value: @help_requests.message
     .field
       = f.label :location
       %br/

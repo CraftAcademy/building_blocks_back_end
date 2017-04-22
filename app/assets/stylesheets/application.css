@@ -47,23 +47,23 @@ li a:hover {
 .new {
     border-radius: 5px;
     background-color: #9BC9D5;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 
 .helpr {
     border-radius: 5px;
     background-color: #D97474;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 .helpr h3 {
-  color: #fff;
+   color: #fff;
 }
 
 
 .new h3 {
-  color: #fff;
+   color: #fff;
 }
 
 input[type=text], select {
@@ -92,7 +92,20 @@ input[type=submit]:hover {
 }
 
 div {
-    border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+}
+
+.head {
+   width: 100%;
+   background-color: #ccc;
+}
+
+.w_link {
+   color: #C70039;
+   text-decoration: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }

@@ -27,5 +27,4 @@ HelpRequest.create(title: "Help broken dorr", message: "lockt in", urgent: true)
 puts "Created #{News.count} news"
 puts "Created #{Facility.count} facilities"
 puts "Created #{HelpRequest.count} help_request"
-puts "Created #{Workorder.count} workorders
-
+puts "Created #{Workorder.count} workorders"

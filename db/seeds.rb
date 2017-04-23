@@ -14,8 +14,11 @@ Facility.create(name: "Laundry", description: "Awesome laundry room", rules: "Le
 Facility.create(name: "Roof terrace", description: "Sunny terrace", rules: "No smoking")
 Facility.create(name: "Backyard", description: "Backyard with barbecue", rules: "No dogs allowed")
 
-Workorder.create(title: "some work", message: "some message", location: "umee", urgent: "true")
-
+Workorder.create(title: "Some work", message: "Some message", location: "Umee", urgent: "true", status: "In progress")
+Workorder.create(title: "Cleaning", message: "Time for cleaning!", location: "Sala", urgent: "true", status: "Done")
+Workorder.create(title: "Broken cat", message: "Lift smell of wet dog", location: "Uppsala", urgent: "true", status: "Unable to complete")
+Workorder.create(title: "Sauna", message: "Call doctor", location: "Salsa", urgent: "false", status: "Pending")
+Workorder.create(title: "broken dorr", message: "Dorr is destroyed", location: "Götet", urgent: "false", status: "Next week")
 
 HelpRequest.create(title: "Help broken window", message: "Hosue is destroyed", urgent: true)
 HelpRequest.create(title: "Help broken car", message: "Car is destroyed", urgent: true)

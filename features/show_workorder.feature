@@ -15,7 +15,6 @@ Feature: Show workorder
     And I should see "Pants are gone"
     And I should see "Västervik"
     And I click link "Update status"
-    Then show me the page
     And I select "In progress" from "Status"
     And I click "Update status"
     Then I should see "Work order status updated"

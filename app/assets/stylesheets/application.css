@@ -13,11 +13,60 @@
  *= require_tree .
  *= require_self
  */
+table {
+    width: 100%;
+    border: 0px;
+    border-collapse: collapse;
+}
+
  table, th, td {
-     vertical-align: text-top;
- }
-th {
-  width: 33%;
+    vertical-align: text-top;
+    border: 0px;
+    padding: 0;
+}
+
+th.help {
+    color: #444;
+    width: 18%;
+    vertical-align: top;
+    background: #ED9993;
+}
+
+th.news {
+    background: #222;
+    opacity: 0.7;
+    color: #222;
+    width: 40%;
+    background-size: cover;
+    vertical-align: top;
+}
+
+.helph {
+    background-color: #fff;
+    opacity: 0.7;
+    padding: 1px;
+    margin: 0 4px 0px;
+}
+
+.newsh {
+    color: #fff;
+    background-color: #999;
+    padding: 1px;
+    margin: 0 2px 0px;
+}
+
+.workh {
+    background-color: #fff;
+    opacity: 0.7;
+    padding: 1px;
+    margin: 0 2px 0px;
+}
+
+th.work {
+    color: #777;
+    width: 22%;
+    vertical-align: top;
+    background-color: #99;
 }
 
 ul {
@@ -45,25 +94,44 @@ li a:hover {
 }
 
 .new {
-    border-radius: 5px;
-    background-color: #9BC9D5;
-    padding: 10px;
-    margin-bottom: 10px;
+    color: #111;
+    background: #FEFEFE;
+    border: 2px solid #FAFAFA;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 3px 2px 1px;
+    padding-top: 6px;
+    background: -webkit-linear-gradient(45deg, #FFF, #DADADA);
+    opacity: 0.9;
+    margin-bottom: 8px;
 }
 
 .helpr {
-    border-radius: 5px;
-    background-color: #D97474;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-.helpr h3 {
-   color: #fff;
+  	background: #FEFEFE;
+  	border: 2px solid #FAFAFA;
+  	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  	margin: 2px 4px 4px;
+    padding-top: 4px;
+  	background: -webkit-linear-gradient(45deg, #FFF, #DADADA);
+  	opacity: 0.9;
+    text-align: top;
+    color: #666;
 }
 
+.main {
+    color: #999;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.main_news {
+    color: #111;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 4px;
+}
 
 .new h3 {
-   color: #fff;
+    color: #fff;
 }
 
 input[type=text], select {
@@ -101,11 +169,49 @@ div {
 }
 
 .w_link {
-   color: #C70039;
-   text-decoration: none;
+     color: #C70039;
+     text-decoration: none;
+     font-size: 12px;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.body {
+    background-color: #ccc;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 2px;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.stat_green {
+    background-color: #C0FE92;
+    color: #6AB136;
+}
+
+.stat_yellow {
+    background-color: #F8F38D;
+    color: #CFBA1A;
+}
+
+.stat_red {
+    background-color: #FC8282;
+    color: #C33333;
+}
+
+.stat_blue {
+    background-color: #96ECFE;
+    color: #3E99AC;
+}
+
+.stat_grey {
+    background-color: #6C6C6C;
+    color: #D5D5D5;
 }

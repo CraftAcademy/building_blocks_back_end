@@ -21,7 +21,11 @@
       %li
         = link_to 'New Work order', new_workorder_path
 
-    %p.alert= alert
-    - if flash[:notice]
-      .notice= flash[:notice]
-    = yield
+
+    .body
+      .alert= alert
+      - if flash[:notice]
+        .notice= flash[:notice]
+      = yield
+    .footer
+      BuildingBlockz inc

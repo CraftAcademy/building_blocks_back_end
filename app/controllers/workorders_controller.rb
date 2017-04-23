@@ -25,6 +25,10 @@ class WorkordersController < ApplicationController
 
   def create
     @workorder = Workorder.new workorder_params
+    if params[:id]
+      @workorder.update(help_request_id: params[:id])
+      HelpRequest.find(params[:id]).update(workorder_id: @workorder.id)
+    end
     if @workorder.save
       flash[:notice] = "New work order sent !!"
       redirect_back(fallback_location: new_workorder_path)

@@ -7,6 +7,15 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.find(params[:id])
   end
 
+  def update
+    @workorder = Workorder.find(params[:id])
+    if workorder_params[:status]
+      @workorder.update(status: workorder_params[:status])
+      flash[:notice] = "Work order status updated"
+      redirect_back(fallback_location: workorders_path)
+    end
+  end
+
   def new
     @workorder = Workorder.new
     if params[:format]
@@ -25,6 +34,6 @@ class WorkordersController < ApplicationController
   private
 
   def workorder_params
-    params.require(:workorder).permit(:title, :message, :location, :urgent)
+    params.require(:workorder).permit(:title, :message, :location, :urgent, :status, :id )
   end
 end

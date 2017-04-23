@@ -14,5 +14,8 @@ Facility.create(name: "Laundry", description: "Awesome laundry room", rules: "Le
 Facility.create(name: "Roof terrace", description: "Sunny terrace", rules: "No smoking")
 Facility.create(name: "Backyard", description: "Backyard with barbecue", rules: "No dogs allowed")
 
+Workorder.create(title: "some work", message: "some message", location: "umee", urgent: "true")
+
 puts "Created #{News.count} news"
 puts "Created #{Facility.count} facilities"
+puts "Created #{Workorder.count} workorders"

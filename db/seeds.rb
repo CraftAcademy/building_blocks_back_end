@@ -16,6 +16,16 @@ Facility.create(name: "Backyard", description: "Backyard with barbecue", rules: 
 
 Workorder.create(title: "some work", message: "some message", location: "umee", urgent: "true")
 
+
+HelpRequest.create(title: "Help broken window", message: "Hosue is destroyed", urgent: true)
+HelpRequest.create(title: "Help broken car", message: "Car is destroyed", urgent: true)
+HelpRequest.create(title: "Help wet dog smell", message: "Lift smell of wet dog", urgent: false)
+HelpRequest.create(title: "Broken cat", message: "Call doctor", urgent: false)
+HelpRequest.create(title: "Windows needs cleaning", message: "Clean my windows", urgent: false)
+HelpRequest.create(title: "Help broken dorr", message: "lockt in", urgent: true)
+
 puts "Created #{News.count} news"
 puts "Created #{Facility.count} facilities"
-puts "Created #{Workorder.count} workorders"
+puts "Created #{HelpRequest.count} help_request"
+puts "Created #{Workorder.count} workorders
+

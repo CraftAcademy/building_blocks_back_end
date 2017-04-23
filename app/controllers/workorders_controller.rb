@@ -1,4 +1,12 @@
 class WorkordersController < ApplicationController
+  def index
+    @workorder = Workorder.all
+  end
+
+  def edit
+    @workorder = Workorder.find(params[:id])
+  end
+
   def new
     @workorder = Workorder.new
     if params[:format]

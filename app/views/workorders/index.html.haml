@@ -1,0 +1,7 @@
+Work order
+
+- @workorder.each do |work|
+  = work.title
+  = work.message
+  = work.location
+  = link_to 'Update status', edit_workorder_path(work.id)

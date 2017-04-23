@@ -1,0 +1,7 @@
+= @workorder.title
+= @workorder.message
+= @workorder.location
+= form_for edit_workorder_path(@workorder.id) do |f|
+  = f.label :status
+  = f.select(:status , ['Pending','Next week','In progress','Unable to complete','Done'])
+  = f.submit "Update status"

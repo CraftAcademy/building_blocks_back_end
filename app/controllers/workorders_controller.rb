@@ -15,7 +15,7 @@ class WorkordersController < ApplicationController
   def new
     @workorder = Workorder.new
     if params[:format]
-      @help_requests = HelpRequest.find(params[:format])
+      @help_request = HelpRequest.find(params[:format])
     end
   end
 

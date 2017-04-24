@@ -18,7 +18,7 @@
       %li
         = link_to 'Home', root_path
       %li
-        = link_to 'Sign up', new_admin_registration_path
+        = link_to 'Sign up', new_user_registration_path
       %li
         = link_to 'Help requests', help_requests_path
       %li
@@ -26,12 +26,10 @@
       %li
         = link_to 'New Work order', new_workorder_path
 
-
     .body
       .alert= alert
       - if flash[:notice]
         .notice= flash[:notice]
-
     = yield
     .footer
       BuildingBlockz inc

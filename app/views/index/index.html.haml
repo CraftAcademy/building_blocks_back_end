@@ -1,25 +1,51 @@
 %h3 Hello! Welcome to Building blockz administration
 
-%table{style: "width:100%"}
+%table
   %tr
-    %th
-      %h3 Urgent Help requests
-    %th
-      %h3 Latest News
-    %th
-      %h3 Work orders status
+    %th.help
+      .helph
+        %h3 Urgent Help requests
+    %th.news
+      .newsh
+        %h3 Latest News
+    %th.work
+      .workh
+        %h3 Work orders status
   %tr
-    %th
+    %th.help
       - @help_requests.each do |help|
-        .helpr
-          %h3= help.title
+        .card
+          .card-divider
+            = help.title
           = help.message
           %br
-          = link_to 'Create work' , new_workorder_path(help.id), class: 'w_link'
-    %th
+          - if help.workorder_id == nil
+            = link_to 'Create work order' , new_workorder_path(help.id), class: 'w_link'
+    %th.news
       - @news.each do |news|
-        .new
-          %h3
+        .card
+          .card-divider
             = news.title
           = news.description
-    %th Pending
+
+    %th.work
+      - @workorder.each do |work|
+        .card
+          .card-divider
+            = work.title
+          = work.message
+          - if work.status == 'Done'
+            .stat_green
+              = work.status
+          -elsif work.status == 'In progress'
+            .stat_yellow
+              = work.status
+          -elsif work.status == 'Unable to complete'
+            .stat_red
+              = work.status
+          -elsif work.status == 'Next week'
+            .stat_blue
+              = work.status
+          -elsif work.status == 'Pending'
+            .stat_grey
+              = work.status

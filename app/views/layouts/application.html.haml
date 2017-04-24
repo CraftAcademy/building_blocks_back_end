@@ -1,11 +1,16 @@
-!!!
-%html
+!!! 5
+%html{ :lang => "en" }
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title BuildingBlocksBackEnd
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{ :charset => "utf-8" }
+
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tag
+
   %body
     .head
       = image_tag('logo4.png',  size: "650x100")
@@ -21,7 +26,10 @@
       %li
         = link_to 'New Work order', new_workorder_path
 
-    %p.alert= alert
-    - if flash[:notice]
-      .notice= flash[:notice]
+    .body
+      .alert= alert
+      - if flash[:notice]
+        .notice= flash[:notice]
     = yield
+    .footer
+      BuildingBlockz inc

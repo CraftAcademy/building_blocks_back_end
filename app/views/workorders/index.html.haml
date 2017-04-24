@@ -1,0 +1,16 @@
+%ul.large-block-grid-3
+  Work order
+  - @workorders.each do |work|
+    %li
+      .card.work
+        .card-divider
+          = work.title
+        Message
+        %br
+        = work.message
+        %br Location
+        = work.location
+        = form_tag workorder_path(work.id), {method: :patch} do
+          = label_tag :status
+          = select_tag :status, options_for_select(['Pending','Next week','In progress','Unable to complete','Done', 'Pending'], selected: work.status)
+          = submit_tag "Update status", class: 'round button'

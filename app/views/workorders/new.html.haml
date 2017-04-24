@@ -1,5 +1,5 @@
 %h3 Send work order
-- if @help_requests == nil
+- if @help_request == nil
   = form_for(@workorder) do |f|
     .field
       = f.label :title
@@ -20,15 +20,15 @@
     .actions
       = f.submit "Send"
 - else
-  = form_for(@workorder) do |f|
+  = form_for @workorder, url: workorders_path(help_request_id: @help_request.id),method: 'post' do |f|
     .field
       = f.label :title
       %br/
-      = f.text_field :title, value: @help_requests.title
+      = f.text_field :title, value: @help_request.title
     .field
       = f.label :message
       %br/
-      = f.text_area :message, value: @help_requests.message
+      = f.text_area :message, value: @help_request.message
     .field
       = f.label :location
       %br/
@@ -36,6 +36,6 @@
     .field
       = f.label :urgent
       %br/
-      = f.check_box(:urgent, {checked: @help_requests.urgent}, true, false)
+      = f.check_box(:urgent, {checked: @help_request.urgent}, true, false)
     .actions
       = f.submit "Send"

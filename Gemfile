@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise'
+gem 'foundation-rails'
 gem 'devise_token_auth'
 
 group :development, :test do

@@ -1,6 +1,6 @@
 class WorkordersController < ApplicationController
   def index
-    @workorder = Workorder.all
+    @workorders = Workorder.all
   end
 
   def update
@@ -22,8 +22,8 @@ class WorkordersController < ApplicationController
   def create
     @workorder = Workorder.new workorder_params
     if params[:id]
-      @workorder.update(help_request_id: params[:id])
-      HelpRequest.find(params[:id]).update(workorder_id: @workorder.id)
+      @workorder.update(help_request_id: params[:help_request_id])
+      HelpRequest.find(params[:help_request_id]).update(workorder_id: @workorder.id)
     end
     if @workorder.save
       flash[:notice] = "New work order sent !!"

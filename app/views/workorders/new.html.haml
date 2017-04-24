@@ -20,7 +20,7 @@
     .actions
       = f.submit "Send"
 - else
-  = form_for @workorder, url: workorders_path(id: @help_requests.id),method: 'post' do |f|
+  = form_for @workorder, url: workorders_path(help_request_id: @help_requests.id),method: 'post' do |f|
     .field
       = f.label :title
       %br/

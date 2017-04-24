@@ -3,14 +3,10 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.all
   end
 
-  def edit
-    @workorder = Workorder.find(params[:id])
-  end
-
   def update
     @workorder = Workorder.find(params[:id])
-    if workorder_params[:status]
-      @workorder.update(status: workorder_params[:status])
+    if params[:status] != ''
+      @workorder.update(status: params[:status])
       flash[:notice] = "Work order status updated"
       redirect_back(fallback_location: workorders_path)
     end

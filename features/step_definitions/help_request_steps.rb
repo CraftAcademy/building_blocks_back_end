@@ -7,7 +7,3 @@ end
 Given(/^I am on the show help request page$/) do
   visit help_requests_path
 end
-
-Then(/^I select "([^"]*)" from "([^"]*)"$/) do |option, category|
-  select option, from: category
-end

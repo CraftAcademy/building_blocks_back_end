@@ -1,35 +1,27 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_facility, only: [:index, :new, :show, :edit, :create]
 
-  # GET /bookings
-  # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = @facility.bookings
   end
 
-  # GET /bookings/1
-  # GET /bookings/1.json
   def show
   end
 
-  # GET /bookings/new
   def new
-    @bookings = Booking.all
   end
 
-  # GET /bookings/1/edit
   def edit
   end
 
-  # POST /bookings
-  # POST /bookings.json
   def create
-    facility = Facility.find_by(name: 'Laundry Room')
-    @booking = Booking.new(start_time: params[:param1],name: 'tester',facility_id: facility.id)
+    @booking = Booking.new(start_time: params[:date],name: 'tester',facility_id: params[:facility_id])
+    #Change name tester to username
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.html { redirect_to facility_booking_path(@facility, @booking) , notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
@@ -38,8 +30,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bookings/1
-  # PATCH/PUT /bookings/1.json
   def update
     respond_to do |format|
       if @booking.update(booking_params)
@@ -52,8 +42,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  # DELETE /bookings/1
-  # DELETE /bookings/1.json
   def destroy
     @booking.destroy
     respond_to do |format|
@@ -62,13 +50,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def set_facility
+    @facility = Facility.find(params[:facility_id])
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_booking
       @booking = Booking.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
       params.require(:booking).permit(:name, :start_time)
     end

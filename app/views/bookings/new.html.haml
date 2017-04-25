@@ -1,14 +1,14 @@
 %h1 New booking
 %br
 Availible times
-= params[:format]
+= params[:date]
 %br
-  = link_to "Time 09.00-12.00", '/bookings?' + {param1: "#{params[:format]} 09:00:00"}.to_param, method: :post
+  = link_to "Time 09.00-12.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 09:00:00"}.to_param, method: :post
   %br
-  = link_to "Time 12.00-15.00", '/bookings?' + {param1: "#{params[:format]} 12:00:00"}.to_param, method: :post
+  = link_to "Time 12.00-15.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 12:00:00"}.to_param, method: :post
   %br
-  = link_to "Time 15.00-18.00", '/bookings?' + {param1: "#{params[:format]} 15:00:00"}.to_param, method: :post
+  = link_to "Time 15.00-18.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 15:00:00"}.to_param, method: :post
   %br
-  = link_to "Time 18.00-21.00", '/bookings?' + {param1: "#{params[:format]} 18:00:00"}.to_param, method: :post
+  = link_to "Time 18.00-21.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 18:00:00"}.to_param, method: :post
 %br
-= link_to 'Back', bookings_path
+= link_to 'Back', facility_bookings_path(@facility)

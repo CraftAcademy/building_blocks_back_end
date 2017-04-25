@@ -14,15 +14,15 @@
       %tr
         %td= booking.name
         %td= booking.start_time
-        %td= link_to 'Show', booking
-        %td= link_to 'Edit', edit_booking_path(booking)
-        %td= link_to 'Destroy', booking, method: :delete, data: { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', facility_booking_path(@facility, booking)
+        %td= link_to 'Edit', edit_facility_booking_path(@facility, booking)
+        %td= link_to 'Destroy', facility_booking_path(@facility, booking), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Booking', new_booking_path
+= link_to 'New Booking', new_facility_booking_path
 = month_calendar events: @bookings do |date, bookings|
-  = link_to new_booking_path(date) do
+  = link_to new_facility_booking_path(@facility, date: date) do
     %div
       = date.strftime('%d')
       - bookings.each do |booking|

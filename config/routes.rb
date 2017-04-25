@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :bookings, only: [:new, :create, :index, :show, :edit]
-
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
@@ -18,7 +16,9 @@ Rails.application.routes.draw do
 
   resources :workorders, only: [:new, :create, :index, :update]
   resources :help_requests, only: [:index]
-  resources :facilities, only: [:new, :create]
+  resources :facilities, only: [:new, :create] do
+    resources :bookings, only: [:new, :create, :index, :show, :edit]
+  end
 
   namespace :api do
     namespace :v1 do

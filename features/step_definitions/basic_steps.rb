@@ -36,11 +36,3 @@ Given(/^I am logged in as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
   login_as(user, scope: :user)
 end
-
-Then(/^I am on the index booking page$/) do
-  visit bookings_path
-end
-
-Given(/^there is a facility named "([^"]*)"$/) do |name|
-  create(:facility, name: name)
-end

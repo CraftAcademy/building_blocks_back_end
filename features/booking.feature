@@ -5,10 +5,10 @@ Feature: Booking an facility
 
   Scenario: I book time slott at a facility.
     Given there is a facility named "Laundry Room"
-    And I am on the index booking page
+    And I am on the booking page for "Laundry Room"
     And I click link "04"
     Then I should see "New booking"
     And I click link "Time 15.00-18.00"
     Then I should see "Booking was successfully created."
-    And I am on the index booking page
+    When I am on the booking page for "Laundry Room"
     Then I should see "04 tester 15:00"

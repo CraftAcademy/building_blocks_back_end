@@ -1,7 +1,7 @@
 = form_for @booking do |f|
   - if @booking.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@booking.errors.count, "error")} prohibited this booking from being saved:"
+      %h2= "#{pluralize("error")} prohibited this booking from being saved:"
       %ul
         - @booking.errors.full_messages.each do |msg|
           %li= msg

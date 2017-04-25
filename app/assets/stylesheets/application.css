@@ -84,14 +84,15 @@ th {
   .day {
     height: 140px;
     vertical-align: top;
+    min-width:140px;
   }
 
-  .wday-0 {
+  /*.wday-0 {
     border: 3px solid #FC8282;
     min-width:150px;
   }
   .wday-1 {
-    min-width:140px;;
+    min-width:140px;
   }
   .wday-2 {
     min-width:140px;
@@ -107,7 +108,7 @@ th {
   }
   .wday-6 {
     min-width:140px;
-  }
+  }*/
 
   .today {
     background-color: #FC8282;

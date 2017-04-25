@@ -4,5 +4,6 @@ FactoryGirl.define do
     description "MyText"
     rules "MyText"
     status false
+    
   end
 end

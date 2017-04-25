@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :bookings
+
+  resources :bookings, only: [:new, :create, :index, :show, :edit]
+
   devise_for :users, controllers: {
     registrations: 'registrations'
   }

@@ -22,7 +22,7 @@ Availible times
   Time 15.00-18.00 Not avalible
   %br
 - if @bookings.find_by(start_time: "#{params[:format]} 18:00:00") == nil
-  = link_to "Time 18.00-21.00", '/bookings?' + {param1: "#{params[:format]} 18:00:00"}.to_param, method: :post 
+  = link_to "Time 18.00-21.00", '/bookings?' + {param1: "#{params[:format]} 18:00:00"}.to_param, method: :post
   %br
 - else
   Time 18.00-21.00 Not avalible

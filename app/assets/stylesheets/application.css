@@ -13,10 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
-
-
 .footer {
     background-color: #333;
     color: white;
@@ -114,22 +111,6 @@ th {
 
   .today {
     background-color: #FC8282;
-  }
-  .past {
-
-  }
-  .future {}
-
-  .start-date {
-
-  }
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {
-
   }
 
 .cal {

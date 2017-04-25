@@ -13,6 +13,10 @@ RSpec.describe Facility, type: :model do
     it { is_expected.to validate_presence_of :description }
   end
 
+  describe 'Associations' do
+    it { is_expected.to have_many :bookings }
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(create(:facility)).to be_valid

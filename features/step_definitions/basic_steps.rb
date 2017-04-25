@@ -41,6 +41,6 @@ Then(/^I am on the index booking page$/) do
   visit bookings_path
 end
 
-Given(/^the following facility exist$/) do
-  create(:facility)
+Given(/^there is a facility named "([^"]*)"$/) do |name|
+  create(:facility, name: name)
 end

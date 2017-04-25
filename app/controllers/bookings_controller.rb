@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    facility = Facility.first
+    facility = Facility.find_by(name: 'Laundry Room')
     @booking = Booking.new(start_time: params[:param1],name: 'tester',facility_id: facility.id)
 
     respond_to do |format|

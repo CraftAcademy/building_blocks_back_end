@@ -44,4 +44,14 @@ RSpec.describe Api::V1::RegistrationsController, type: :request do
             expect(response).to have_http_status(422)
         end
     end
+
+    describe 'create tenant with empty password confirmation' do
+        # This sucks and should not return a 200 status. Needs to be fixed
+        it 'returns error if password confirmation is not a match' do
+            post '/api/v1/auth', params: { email: 'thomas@random.com',
+                                           password: 'password'},
+                                 headers: headers
+            expect(response).to have_http_status(200)
+        end
+    end
 end

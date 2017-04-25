@@ -1,6 +1,7 @@
 class Facility < ApplicationRecord
   validates_presence_of :name, :description
   has_many :bookings
+  has_many :timeslots
 
   def self.hours
     ['01:00','02:00','03:00','04:00','04:00','05:00',

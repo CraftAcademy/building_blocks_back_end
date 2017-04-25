@@ -24,7 +24,8 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(start_time: params[:param1],name: 'tester')
+    facility = Facility.first
+    @booking = Booking.new(start_time: params[:param1],name: 'tester',facility_id: facility.id)
 
     respond_to do |format|
       if @booking.save

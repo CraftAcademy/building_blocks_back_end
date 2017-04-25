@@ -4,6 +4,7 @@ Feature: Booking an facility
   I would like to be able to select a time slott at a facility.
 
   Scenario: I book time slott at a facility.
+    Given the following facility exist
     And I am on the index booking page
     And I click link "04"
     Then I should see "New booking"

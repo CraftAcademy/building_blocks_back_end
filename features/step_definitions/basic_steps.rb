@@ -40,3 +40,7 @@ end
 Then(/^I am on the index booking page$/) do
   visit bookings_path
 end
+
+Given(/^the following facility exist$/) do
+  create(:facility)
+end

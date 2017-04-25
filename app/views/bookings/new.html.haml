@@ -3,29 +3,12 @@
 Availible times
 = params[:format]
 %br
-- if @bookings.find_by(start_time: "#{params[:format]} 09:00:00") == nil
   = link_to "Time 09.00-12.00", '/bookings?' + {param1: "#{params[:format]} 09:00:00"}.to_param, method: :post
   %br
-- else
-  Time 09.00-12.00 Not avalible
-  %br
-- if @bookings.find_by(start_time: "#{params[:format]} 12:00:00") == nil
   = link_to "Time 12.00-15.00", '/bookings?' + {param1: "#{params[:format]} 12:00:00"}.to_param, method: :post
   %br
-- else
-  Time 12.00-15.00 Not avalible
-  %br
-- if @bookings.find_by(start_time: "#{params[:format]} 15:00:00") == nil
   = link_to "Time 15.00-18.00", '/bookings?' + {param1: "#{params[:format]} 15:00:00"}.to_param, method: :post
   %br
-- else
-  Time 15.00-18.00 Not avalible
-  %br
-- if @bookings.find_by(start_time: "#{params[:format]} 18:00:00") == nil
   = link_to "Time 18.00-21.00", '/bookings?' + {param1: "#{params[:format]} 18:00:00"}.to_param, method: :post
-  %br
-- else
-  Time 18.00-21.00 Not avalible
-  %br
 %br
 = link_to 'Back', bookings_path

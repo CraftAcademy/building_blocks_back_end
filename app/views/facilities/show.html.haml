@@ -1,0 +1,11 @@
+scheduleing controll for
+= @facility.name
+
+= form_tag workorder_path(work.id), {method: :patch} do
+  = label_tag 'Opening hour'
+  = select_tag :time, options_for_select([Facility.hours], selected: work.status)
+  = label_tag 'Closing hour'
+  = select_tag :time, options_for_select([Facility.hours], selected: work.status)
+  = label_tag 'Number of time slot'
+  = select_tag :time, options_for_select(['Pending'], selected: work.status)
+  = submit_tag "Set schedule", class: 'round button'

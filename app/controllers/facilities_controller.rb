@@ -4,6 +4,10 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.all
   end
 
+  def show
+    @facility = Facility.find(params[:id])
+  end
+
   def new
     @facility = Facility.new
   end

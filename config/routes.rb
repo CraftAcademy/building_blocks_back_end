@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :events
+  devise_for :admins
+  root controller: :index, action: :index
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
       root to: 'devise/registrations#new', as: :unauthenticated_root
     end
   end
+
 
   resources :news, only: [:new, :create]
 

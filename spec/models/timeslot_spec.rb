@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Timeslot, type: :model do
   describe 'DB table' do
-    it { is_expected.to have_db_column :date }
+    it { is_expected.to have_db_column :start_time }
+    it { is_expected.to have_db_column :end_time }
   end
 
   describe 'Associations' do

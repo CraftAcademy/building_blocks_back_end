@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :help_requests, only: [:index]
   resources :facilities, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:new, :create, :index, :show, :edit]
+    resources :timeslots, only: [:create]
   end
 
   namespace :api do

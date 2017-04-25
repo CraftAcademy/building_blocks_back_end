@@ -8,8 +8,8 @@ Feature: Admin booking page
     And I am on the facility show page
     And I click link "Laundry Room"
     Then I should see "scheduleing controll for Laundry Room"
-    And I select "09:00" from "Opening hour"
-    And I select "21:00" from "Closing hour"
-    And I select "4" from "Number of time slot"
+    And I select "9" from "start_time"
+    And I select "4" from "time_slot"
+    And I select "4" from "hours"
     And I click "Set schedule"
     Then I should see "schedule created"

@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :timeslot do
-    date "MyString"
+    start_time "10:00"
+    end_time "12:00"
     association :facility
   end
 end

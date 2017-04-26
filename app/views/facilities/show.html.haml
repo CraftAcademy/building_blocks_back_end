@@ -1,11 +1,19 @@
 scheduleing controll for
 = @facility.name
-
-= form_tag facility_timeslots_path(@facility), {method: :post} do
-  = label_tag 'Start time'
-  = select_tag 'start_time', options_for_select(Facility.start_time)
-  = label_tag 'Number of time slot'
-  = select_tag 'time_slot', options_for_select(Facility.time_slot)
-  = label_tag 'Number of hours'
-  = select_tag 'hours', options_for_select(Facility.hours)
-  = submit_tag "Set schedule", class: 'round button'
+- if @facility.timeslots[0].nil?
+  = form_tag facility_timeslots_path(@facility), {method: :post} do
+    = label_tag 'Start time'
+    = select_tag 'start_time', options_for_select(Facility.start_time)
+    = label_tag 'Number of time slot'
+    = select_tag 'time_slot', options_for_select(Facility.time_slot)
+    = label_tag 'Number of hours'
+    = select_tag 'hours', options_for_select(Facility.hours)
+    = submit_tag "Set schedule", class: 'round button'
+- else
+  current schedule
+  %br
+  - @facility.timeslots.order(:created_at).each do |timeslots|
+    = timeslots.start_time
+    -
+    = timeslots.end_time
+    %br

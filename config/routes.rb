@@ -27,7 +27,9 @@ Rails.application.routes.draw do
         registrations: 'api/v1/registrations'
       }
       resources :news, only: [:index], defaults: { format: 'json' }
-      resources :facilities, only: [:index], defaults: { format: 'json'}
+      resources :facilities, only: [:index], defaults: { format: 'json'} do
+        resources :bookings, only: [:new, :create, :index, :show, :edit], defaults: { format: 'json'}
+      end
       resources :help_requests, only: [:create], defaults: { format: 'json' }
     end
   end

@@ -1,4 +1,4 @@
-scheduleing controll for
+Scheduling control for
 = @facility.name
 - if @facility.timeslots[0].nil?
   = form_tag facility_timeslots_path(@facility), {method: :post} do
@@ -12,8 +12,8 @@ scheduleing controll for
 - else
   current schedule
   %br
-  - @facility.timeslots.order(:created_at).each do |timeslots|
-    = timeslots.start_time
+  - @facility.timeslots.order(:created_at).each do |timeslot|
+    = timeslot.start_time
     -
-    = timeslots.end_time
+    = timeslot.end_time
     %br

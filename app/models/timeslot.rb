@@ -2,7 +2,7 @@ class Timeslot < ApplicationRecord
   belongs_to :facility
 
 
-  def self.creat_schedule(params)
+  def self.create_schedule(params)
     time = params[:start_time].to_i
     slot_times = params[:time_slot].to_i
     newt = 0

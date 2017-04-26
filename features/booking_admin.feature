@@ -7,7 +7,7 @@ Feature: Admin booking page
     Given there is a facility named "Laundry Room"
     And I am on the facility show page
     And I click link "Laundry Room"
-    Then I should see "scheduleing controll for Laundry Room"
+    Then I should see "Scheduling control for Laundry Room"
     And I select "9" from "start_time"
     And I select "5" from "time_slot"
     And I select "3" from "hours"
@@ -15,4 +15,4 @@ Feature: Admin booking page
     Then I should see "schedule created"
     And I am on the facility show page
     And I click link "Laundry Room"
-    Then I should not see "schedule created"
+    Then I should not see "Set schedule"

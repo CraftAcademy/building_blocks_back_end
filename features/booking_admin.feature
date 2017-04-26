@@ -15,5 +15,4 @@ Feature: Admin booking page
     Then I should see "schedule created"
     And I am on the facility show page
     And I click link "Laundry Room"
-    And I should not see "schedule created"
-    Then show me the page
+    Then I should not see "schedule created"

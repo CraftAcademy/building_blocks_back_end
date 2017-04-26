@@ -14,7 +14,7 @@ RSpec.describe "Timeslots", type: :request do
 
   describe "GET /api/v1/facilities/:facility_id/timeslots" do
     it "it should return all time slots for Sauna" do
-      get api_v1_facility_timeslots(facility.id)
+      get api_v1_facility_timeslots_path(facility.id)
 
       expected_response = [{
        'start_time' => '12:00',

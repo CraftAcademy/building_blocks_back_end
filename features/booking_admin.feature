@@ -15,4 +15,8 @@ Feature: Admin booking page
     Then I should see "schedule created"
     And I am on the facility index page
     And I click link "Laundry Room"
-    Then I should not see "Set schedule"
+    Then I should see "09:00:00 12:00:00"
+    And I should see "12:00:00 15:00:00"
+    And I should see "15:00:00 18:00:00"
+    And I should see "18:00:00 21:00:00"
+    And I should see "21:00:00 00:00:00"

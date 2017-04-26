@@ -10,9 +10,14 @@ News.create(title: "Playground", description: "Playground is being repaired")
 News.create(title: "Cleaning", description: "Time for spring cleaning!")
 
 Facility.create(name: "Sauna", description: "Awesome sauna", rules: "No underwear")
-Facility.create(name: "Laundry", description: "Awesome laundry room", rules: "Leave it as you found it")
+facility = Facility.create(name: "Laundry", description: "Awesome laundry room", rules: "Leave it as you found it")
 Facility.create(name: "Roof terrace", description: "Sunny terrace", rules: "No smoking")
 Facility.create(name: "Backyard", description: "Backyard with barbecue", rules: "No dogs allowed")
+
+Timeslot.create(start_time: "09:00:00",end_time: "12:00:00",facility_id: facility.id)
+Timeslot.create(start_time: "12:00:00",end_time: "15:00:00",facility_id: facility.id)
+Timeslot.create(start_time: "15:00:00",end_time: "18:00:00",facility_id: facility.id)
+Timeslot.create(start_time: "18:00:00",end_time: "21:00:00",facility_id: facility.id)
 
 Workorder.create(title: "Some work", message: "Some message", location: "Umee", urgent: "true", status: "In progress")
 Workorder.create(title: "Cleaning", message: "Time for cleaning!", location: "Sala", urgent: "true", status: "Done")
@@ -27,7 +32,10 @@ HelpRequest.create(title: "Broken cat", message: "Call doctor", urgent: false)
 HelpRequest.create(title: "Windows needs cleaning", message: "Clean my windows", urgent: false)
 HelpRequest.create(title: "Help broken dorr", message: "lockt in", urgent: true)
 
+
+
 puts "Created #{News.count} news"
 puts "Created #{Facility.count} facilities"
 puts "Created #{HelpRequest.count} help_request"
 puts "Created #{Workorder.count} workorders"
+puts "Created #{Timeslot.count} timeslots"

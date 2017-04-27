@@ -5,3 +5,7 @@ end
 Then(/^I check Available check box$/) do
   check 'facility_status'
 end
+
+Given(/^I am on the facility index page$/) do
+  visit facilities_path
+end

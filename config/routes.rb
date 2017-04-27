@@ -16,8 +16,9 @@ Rails.application.routes.draw do
 
   resources :workorders, only: [:new, :create, :index, :update]
   resources :help_requests, only: [:index]
-  resources :facilities, only: [:new, :create] do
+  resources :facilities, only: [:new, :create, :index, :show] do
     resources :bookings, only: [:new, :create, :index, :show, :edit]
+    resources :timeslots, only: [:create]
   end
 
   namespace :api do
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
       resources :news, only: [:index], defaults: { format: 'json' }
       resources :facilities, only: [:index], defaults: { format: 'json'} do
         resources :bookings, only: [:new, :create, :index, :show, :edit], defaults: { format: 'json'}
+        resources :timeslots, only: [:index]
       end
       resources :help_requests, only: [:create], defaults: { format: 'json' }
     end

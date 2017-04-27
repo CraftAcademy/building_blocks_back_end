@@ -13,23 +13,24 @@
 
   %body
     .head
-      -# = image_tag('logo4.png',  size: "650x100")
-      -# - if current_user.role = 'janitor'
-      -#   Janitor
-      -# - else
-      %ul.menu.menu-desktop
-        %li
-          = link_to 'Home', root_path
-        %li
-          = link_to 'Sign up', new_user_registration_path
-        %li
-          = link_to 'Help requests', help_requests_path
-        %li
-          = link_to 'Facilities', new_facility_path
-        %li
-          = link_to 'New Work order', new_workorder_path
-        %li
-          = link_to 'Sign Out', destroy_user_session_path, {method: :delete}
+      = image_tag('logo4.png',  size: "650x100")
+      - if current_user
+        - if current_user.role = 'janitor'
+          Janitor
+        - else
+          %ul.menu.menu-desktop
+            %li
+              = link_to 'Home', root_path
+            %li
+              = link_to 'Sign up', new_user_registration_path
+            %li
+              = link_to 'Help requests', help_requests_path
+            %li
+              = link_to 'Facilities', new_facility_path
+            %li
+              = link_to 'New Work order', new_workorder_path
+            %li
+              = link_to 'Sign Out', destroy_user_session_path, {method: :delete}
 
     .body
       .alert= alert

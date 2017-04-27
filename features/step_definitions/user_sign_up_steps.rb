@@ -18,3 +18,7 @@ Then(/^"([^"]*)" should be marked as "([^"]*)"$/) do |email, option|
   user = User.find_by(email: email)
   expect(user.role).to eq option
 end
+
+Given(/^I am on the sign in page$/) do
+  visit new_user_session_path
+end

@@ -8,10 +8,10 @@ Feature: Jaintor sign in
       | email           | password  | password_confirmation | role    |
       | nubbe@nubbe.com | 12345678  | 12345678              | janitor |
 
-  Scenario: I sign in and look at workorders
-    Given I am on the sign in page
-    And I fill in "Email" with "morgan@morgan.com"
-    And I fill in "Password" with "12345678"
-    And I click "Log in"
-    Then I should not see "Home"
-    And I should see "workorders"
+    Scenario: I sign in and look at workorders
+      Given I am on the sign in page
+      And I fill in "Email" with "nubbe@nubbe.com"
+      And I fill in "Password" with "12345678"
+      And I click "Log in"
+      Then I should not see "Home"
+      And I should see "Work orders"

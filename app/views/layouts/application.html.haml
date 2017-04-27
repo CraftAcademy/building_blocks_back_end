@@ -15,7 +15,7 @@
     .head
       = image_tag('logo4.png',  size: "650x100")
       - if current_user
-        - if current_user.role = 'janitor'
+        - if current_user.role == 'janitor'
           Janitor
         - else
           %ul.menu.menu-desktop

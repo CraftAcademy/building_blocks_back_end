@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    
+    @facility = Facility.find(params[:facility_id])
+    @bookings = Booking.all
   end
 
   def edit

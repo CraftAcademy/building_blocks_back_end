@@ -1,5 +1,6 @@
 %h3 Help request messages
-
+.row
+ 
 - @help_requests.each do |help|
   .helpr
     = link_to help.title, new_workorder_path(help.id)

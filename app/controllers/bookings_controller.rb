@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
 
   def new
     @facility = Facility.find(params[:facility_id])
-    @bookings = Booking.all
+    @date = params[:date]
+    @bookings = Booking.where(facility_id: params[:facility_id])
   end
 
   def edit

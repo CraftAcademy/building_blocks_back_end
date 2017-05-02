@@ -1,4 +1,5 @@
-- @facilities.each do | facility |
-  = facility.name
-  = facility.description
-  = link_to facility.name, facility_path(facility.id)
+.base
+  - @facilities.each do | facility |
+    = facility.name
+    = facility.description
+    = link_to facility.name, facility_path(facility.id)

@@ -1,16 +1,13 @@
 .base
-  %h3 Create a news message
+  %h2 Editing #{@news.title}
   = form_for (@news) do |f|
     .field
       = f.label :title
       %br/
-      = f.text_field :title
+      = f.text_field :title, value: @news.title
     .field
       = f.label :description
       %br/
-      = f.text_area :description
+      = f.text_area :description, value: @news.description
     .actions
       = f.submit "Submit"
-
-  - if flash[:notice]
-    .notice= flash[:notice]

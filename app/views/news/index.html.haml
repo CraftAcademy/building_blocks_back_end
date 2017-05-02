@@ -1,0 +1,11 @@
+.base
+  %h3 News
+  .row
+    - @news.each do |news|
+      .large-4.medium-4.columns
+        .card
+          .newh
+            = news.title
+          = news.description
+          = link_to "Update", "/news/#{news.id}/edit", method: :get
+          = link_to "Delete", facility_timeslot_path(params[:id], 3), method: :delete

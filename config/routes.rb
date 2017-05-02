@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :news, only: [:new, :create]
+  resources :news, only: [:new, :create, :index, :edit, :update, :destroy]
 
   resources :workorders, only: [:new, :create, :index, :update]
   resources :help_requests, only: [:index]

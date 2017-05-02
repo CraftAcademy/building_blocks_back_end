@@ -1,4 +1,9 @@
 class NewsController < ApplicationController
+
+  def index
+    @news = News.all
+  end
+
   def new
     @news = News.new
   end
@@ -8,6 +13,26 @@ class NewsController < ApplicationController
     if @news.save
       flash[:notice] = "News post created!"
       redirect_back(fallback_location: new_news_path)
+    end
+  end
+
+  def edit
+    @news = News.find(params[:id])
+  end
+
+  def update
+    @news = News.find(params[:id])
+    if @news.update news_params
+      flash[:notice] = "News post created!"
+      redirect_back(fallback_location: new_news_path)
+    end
+  end
+
+  def destroy
+    @news = News.find(params[:id])
+    if @news.destroy
+      flash[:notice] = "News post Deleted!"
+      redirect_back(fallback_location: news_path)
     end
   end
 

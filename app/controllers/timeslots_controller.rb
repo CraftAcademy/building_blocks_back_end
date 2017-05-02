@@ -5,6 +5,15 @@ class TimeslotsController < ApplicationController
     redirect_back(fallback_location: facilities_path)
   end
 
+  def destroy
+    @timeslots = Timeslot.where(facility_id: params[:facility_id])
+    @timeslots.each do |timeslot|
+      timeslot.destroy
+    end
+    redirect_back(fallback_location: facilities_path)
+  end
+
+
 
   private
 

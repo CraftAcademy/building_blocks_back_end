@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   resources :workorders, only: [:new, :create, :index, :update]
   resources :help_requests, only: [:index]
   resources :facilities, only: [:new, :create, :index, :show] do
-    resources :bookings, only: [:new, :create, :index, :show, :edit]
-    resources :timeslots, only: [:create]
+    resources :bookings, only: [:new, :create, :index, :show, :edit, :destroy]
+    resources :timeslots, only: [:create, :destroy]
   end
 
   namespace :api do

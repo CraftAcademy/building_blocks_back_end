@@ -94,3 +94,20 @@ th {
 .cal {
   background-color: #158E07;
 }
+
+.row.facil {
+  float: left
+}
+
+.large-2.medium-2.columns{
+  width: 150px;
+  text-align: center;
+}
+
+.large-2.medium-2.columns a:link {
+  color: black;
+}
+
+.large-2.medium-2.columns a:hover {
+  color: #666;
+}

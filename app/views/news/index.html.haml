@@ -7,5 +7,8 @@
           .newh
             = news.title
           = news.description
-          = link_to "Update", "/news/#{news.id}/edit", method: :get
-          = link_to "Delete", facility_timeslot_path(params[:id], 3), method: :delete
+          %br
+          %br
+          %p
+            = link_to "Update", "/news/#{news.id}/edit", method: :get, class: 'button tiny success'
+            = link_to "Delete", "/news/#{news.id})", method: :delete, class: 'button tiny alert'

@@ -121,7 +121,7 @@ th {
 
 .simple-calendar {
   width: 1024px;
-  height: 600px;
+  height: 740px;
 }
 
 .day {
@@ -131,11 +131,14 @@ th {
 }
 
 .today {
-  background-color: #FC8282;
+  background-color: #23c1a0;
+  opacity: 0.3;
 }
 
 .cal {
-  background-color: #158E07;
+  padding-left: 2px;
+  background-color: #23c1a0;
+  color: #fff;
 }
 
 .row.facil {
@@ -186,3 +189,6 @@ ul.menu.menu-desktop {
   font-family: 'Julius Sans One', sans-serif;
 }
 
+.button.inc {
+  background-color: #23c1a0;
+}

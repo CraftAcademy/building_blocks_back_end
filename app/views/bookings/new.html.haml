@@ -2,13 +2,16 @@
 %br
 Availible times
 = params[:date]
-%br
-  = link_to "Time 09.00-12.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 09:00:00"}.to_param, method: :post
-  %br
-  = link_to "Time 12.00-15.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 12:00:00"}.to_param, method: :post
-  %br
-  = link_to "Time 15.00-18.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 15:00:00"}.to_param, method: :post
-  %br
-  = link_to "Time 18.00-21.00", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} 18:00:00"}.to_param, method: :post
+- @facility.timeslots.order(:created_at).each do |timeslot|
+  - if @bookings.find_by(start_time: "#{@date} #{timeslot.start_time}") == nil
+    %br
+    = link_to "Time #{timeslot.start_time}-#{timeslot.end_time}", "/facilities/#{params[:facility_id]}/bookings?" + {date: "#{params[:date]} #{timeslot.start_time}"}.to_param, method: :post
+    %br
+  - else
+    %br
+    bookt
+    = timeslot.start_time
+    = timeslot.end_time
+    %br
 %br
 = link_to 'Back', facility_bookings_path(@facility)

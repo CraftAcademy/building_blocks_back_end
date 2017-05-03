@@ -4,8 +4,6 @@ class Api::V1::BookingsController < ApiController
   end
 
   def create
-    # binding.pry
-
     @booking = Booking.new booking_params
     @booking.update(facility_id: params[:facility_id])
 

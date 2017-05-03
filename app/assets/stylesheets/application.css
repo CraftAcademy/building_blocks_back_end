@@ -29,26 +29,62 @@
 .stat_green {
     background-color: #C0FE92;
     color: #6AB136;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    font-size:8px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
 }
 
 .stat_yellow {
     background-color: #F8F38D;
     color: #CFBA1A;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    font-size:8px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
 }
 
 .stat_red {
     background-color: #FC8282;
     color: #C33333;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    font-size:8px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
 }
 
 .stat_blue {
     background-color: #96ECFE;
     color: #3E99AC;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    font-size:8px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
+    position: relative;
 }
 
 .stat_grey {
     background-color: #6C6C6C;
     color: #D5D5D5;
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    font-size:8px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
 }
 
 .card {
@@ -134,4 +170,8 @@ th {
   padding: 4px;
   background-color: #444;
   color: #fff;
+}
+
+.card-divider {
+
 }

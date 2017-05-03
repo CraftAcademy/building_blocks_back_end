@@ -1,5 +1,5 @@
 %h3 Hello! Welcome to Building blockz administration
-.row.facil 
+.row.facil
   - @facilities.each do | facility |
     .large-2.medium-2.columns
       = link_to image_tag('facility.png', size: "100x100"), facility_path(facility.id)
@@ -39,19 +39,10 @@
         .card
           .card-divider
             = work.title
+            - if work.status == 'Done'
+              .stat_green
+            -elsif work.status == 'In progress'
+              .stat_yellow
+            -elsif work.status == 'Unable to complete'
+              .stat_red
           = work.message
-          - if work.status == 'Done'
-            .stat_green
-              = work.status
-          -elsif work.status == 'In progress'
-            .stat_yellow
-              = work.status
-          -elsif work.status == 'Unable to complete'
-            .stat_red
-              = work.status
-          -elsif work.status == 'Next week'
-            .stat_blue
-              = work.status
-          -elsif work.status == 'Pending'
-            .stat_grey
-              = work.status

@@ -13,4 +13,4 @@ Feature: Booking an facility
     And I click link "Time 15:00-18:00"
     Then I should see "Booking was successfully created."
     When I am on the booking page for "Laundry Room"
-    Then I should see "18 tester 15:00"
+    Then I should see "18 Admin 15:00"

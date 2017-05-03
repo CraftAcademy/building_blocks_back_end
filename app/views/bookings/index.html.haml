@@ -29,5 +29,4 @@
             %td= booking.name
             %td= booking.start_time
             %td= link_to 'Show', facility_booking_path(@facility, booking), class: 'button tiny inc'
-            %td= link_to 'Edit', edit_facility_booking_path(@facility, booking), class: 'button tiny inc'
             %td= link_to 'Destroy', facility_booking_path(@facility, booking), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny inc'

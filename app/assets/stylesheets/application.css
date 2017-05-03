@@ -63,31 +63,6 @@
     text-align:center;
 }
 
-.stat_blue {
-    background-color: #96ECFE;
-    color: #3E99AC;
-    width:30px;
-    height:30px;
-    border-radius:50px;
-    font-size:8px;
-    color:#fff;
-    line-height:30px;
-    text-align:center;
-    position: relative;
-}
-
-.stat_grey {
-    background-color: #6C6C6C;
-    color: #D5D5D5;
-    width:30px;
-    height:30px;
-    border-radius:50px;
-    font-size:8px;
-    color:#fff;
-    line-height:30px;
-    text-align:center;
-}
-
 .card {
   width: 100%;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);

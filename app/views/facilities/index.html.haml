@@ -1,5 +1,9 @@
 .base
-  - @facilities.each do | facility |
-    = facility.name
-    = facility.description
-    = link_to facility.name, facility_path(facility.id)
+  .row
+    - @facilities.each do | facility |
+      .large-3.medium-3.columns
+        = link_to facility.name, facility_path(facility.id)
+        %br
+        = facility.description
+
+  = link_to 'New Facility', new_facility_path, class: 'button success'

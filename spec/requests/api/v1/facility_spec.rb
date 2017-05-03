@@ -23,4 +23,19 @@ RSpec.describe Api::V1::FacilitiesController, type: :request do
       expect(response.status).to eq 200
     end
   end
+
+  describe 'GET /v1/facilities' do
+    it 'should return one facility name, description, rules' do
+      get "/api/v1/facilities/#{facility.id}"
+
+      expected_response = {
+        'name' => 'Sauna',
+        'description' => 'Hot hot Sauna',
+        'rules' => 'No Underwear',
+      }
+
+      expect(response_json).to eq expected_response
+      expect(response.status).to eq 200
+    end
+  end
 end

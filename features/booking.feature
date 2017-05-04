@@ -3,8 +3,6 @@ Feature: Booking an facility
   In order to book a time at a facility
   I would like to be able to select a time slott at a facility.
 
-
-
   Scenario: I book time slott at a facility.
     Given there is a facility named and timeslot "Laundry Room"
     And I am on the booking page for "Laundry Room"

@@ -32,7 +32,7 @@ RSpec.describe "Timeslots", type: :request do
 
     it 'should render error message on failure' do
       get '/api/v1/facilities/9999999/timeslots'
-      expected_response = {message: 'error'}
+      expected_response = {message: "Couldn't find Facility with 'id'=9999999"}
       expect(response_json).to eq JSON.parse(expected_response.to_json)
       expect(response.status).to eq 404
    end

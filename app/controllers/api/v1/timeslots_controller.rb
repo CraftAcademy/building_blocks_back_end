@@ -5,8 +5,8 @@ class Api::V1::TimeslotsController < ApiController
       @bookings = Booking.where(facility_id: params[:facility_id])
       date = params[:date]
       @date =(date.to_time + 2.hours).strftime("%F")
-    rescue
-      render json: { message: "error"}, status: 404
+    rescue => error
+      render json: { message: error}, status: 404
     end
   end
 end

@@ -4,6 +4,10 @@ class Api::V1::FacilitiesController < ApiController
   end
 
   def show
-    @facility = Facility.find(params[:id])
+    begin
+      @facility = Facility.find(params[:id])
+    rescue
+      render json: { message: "error"}, status: 404
+    end
   end
 end

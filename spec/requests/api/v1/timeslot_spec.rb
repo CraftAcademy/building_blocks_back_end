@@ -29,5 +29,12 @@ RSpec.describe "Timeslots", type: :request do
       expect(response_json).to eq expected_response
       expect(response.status).to eq 200
     end
+
+    it 'should render error message on failure' do
+      get '/api/v1/facilities/9999999/timeslots'
+      expected_response = {message: 'error'}
+      expect(response_json).to eq JSON.parse(expected_response.to_json)
+      expect(response.status).to eq 404
+   end
   end
 end

@@ -2,10 +2,12 @@
   .row
     - @facilities.each do | facility |
       .large-3.medium-3.columns
-        = link_to facility.name, facility_path(facility.id)
+        = facility.name
         %br
         = facility.description
         %br
+        %br
+        = link_to "Mange time slots", facility_path(facility.id), class: 'button tiny inc'
         = link_to 'Mange bookings', facility_bookings_path(facility.id), class: 'button tiny inc'
         = link_to "Delete", "/facilities/#{facility.id}", method: :delete, class: 'button tiny alert'
   %br

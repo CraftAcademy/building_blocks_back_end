@@ -5,6 +5,8 @@
       .large-4.medium-4.columns
         .card
           .newh
+            - if help.urgent == true
+              .stat_urgent
             = link_to help.title, new_workorder_path(help.id)
         = help.message
         %br

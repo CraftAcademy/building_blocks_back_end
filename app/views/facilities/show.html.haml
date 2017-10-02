@@ -19,7 +19,7 @@
       - @facility.timelists.order(:created_at).each do |timeslot|
         = timeslot.time
         %br
-      = link_to "Update timelist", building_facility_timelist_path(@building, params[:id], 3), method: :delete, class: 'button inc'
+      = link_to "Update timelist", building_facility_timelist_path(@building, params[:id], 3), method: :delete, class: 'round button'
     %br
     - if @facility.timeslots[0].nil?
       = form_tag building_facility_timeslots_path(@building, @facility), {method: :post} do

@@ -208,8 +208,9 @@ h4, h3 {
 
 .round.button {
   color: #23c1a0;
-  background-color: #424242;
+  background-color: #585858;
   font-family: sans-serif;
+  font-size: 18px;
   border-radius: 6px;
 }
 
@@ -217,6 +218,22 @@ h4, h3 {
   color: #23c1a0;
   background-color: #424242;
   font-family: sans-serif;
+}
+
+.button.tiny.alert {
+  color: #F5A9A9;
+  background-color: #B40404;
+  font-family: sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.button.tiny.inc {
+  color: #23c1a0;
+  background-color: #585858;
+  font-family: sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
 }
 
 p {

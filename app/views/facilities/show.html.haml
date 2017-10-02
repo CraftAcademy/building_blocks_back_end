@@ -11,7 +11,7 @@
         = select_tag 'end_time', options_for_select(Timelist.start_end)
         = label_tag 'Interval in minutes'
         = select_tag 'gap', options_for_select(Timelist.minutes_gap)
-        = submit_tag "Set opening and closing time", class: 'button inc'
+        = submit_tag "Set opening and closing time", class: 'round button'
     - else
       current timeslots
       %br
@@ -29,7 +29,7 @@
         = select_tag 'time_slot', options_for_select(Facility.time_slot)
         = label_tag 'Number of hours'
         = select_tag 'hours', options_for_select(Facility.hours)
-        = submit_tag "Set schedule", class: 'button inc'
+        = submit_tag "Set schedule", class: 'round button'
     - else
       current schedule
       %br
@@ -39,4 +39,4 @@
         -
         = timeslot.end_time
         %br
-      = link_to "Update timeslots", building_facility_timeslot_path(@building, params[:id], 3), method: :delete, class: 'button inc'
+      = link_to "Update timeslots", building_facility_timeslot_path(@building, params[:id], 3), method: :delete, class: 'round button'

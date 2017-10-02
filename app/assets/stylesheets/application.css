@@ -206,6 +206,13 @@ h4, h3 {
   background-color: #fff;
 }
 
+.round.button {
+  color: #23c1a0;
+  background-color: #424242;
+  font-family: sans-serif;
+  border-radius: 6px;
+}
+
 .button.inc {
   color: #23c1a0;
   background-color: #424242;

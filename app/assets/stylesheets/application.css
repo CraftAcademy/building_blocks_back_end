@@ -207,8 +207,9 @@ h4, h3 {
 }
 
 .button.inc {
-  background-color: #23c1a0;
-  font-family: 'Julius Sans One', sans-serif;
+  color: #23c1a0;
+  background-color: #424242;
+  font-family: sans-serif;
 }
 
 p {

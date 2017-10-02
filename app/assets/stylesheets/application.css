@@ -35,14 +35,14 @@
 
 .footer {
     background-color: #23c1a0;
-    color: white;
+    color: #585858;
     text-align: right;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 25px;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: sans-serif;
 
 }
 
@@ -197,8 +197,9 @@ th {
 
 
 h4, h3 {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: sans-serif;
   text-align: center;
+  font-size: 32px;
 }
 
 

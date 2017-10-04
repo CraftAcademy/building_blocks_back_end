@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  VALID_ROLES = ['admin', 'janitor', 'tenant', 'user']
+  VALID_ROLES = ['admin', 'janitor', 'tenant', 'user', 'superadmin']
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
@@ -15,5 +15,8 @@ class User < ApplicationRecord
   end
   def janitor?
     self.role == 'janitor'
+  end
+  def superadmin?
+    self.role == 'superadmin'
   end
 end

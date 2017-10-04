@@ -32,10 +32,11 @@ HelpRequest.create(title: "Broken cat", message: "Call doctor", urgent: false)
 HelpRequest.create(title: "Windows needs cleaning", message: "Clean my windows", urgent: false)
 HelpRequest.create(title: "Help broken dorr", message: "lockt in", urgent: true)
 
-
+User.create(email: "info@buildingblockz.se", password: "123456", role: "superadmin")
 
 puts "Created #{News.count} news"
 puts "Created #{Facility.count} facilities"
 puts "Created #{HelpRequest.count} help_request"
 puts "Created #{Workorder.count} workorders"
 puts "Created #{Timeslot.count} timeslots"
+puts "Created #{User.count} users"

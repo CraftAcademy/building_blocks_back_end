@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :dashboards, only: [:index]
+
   post '/', controller: :index, action: :select_building, as: :select_building
 
   resources :buildings, only: [:new, :create, :show, :index] do
@@ -25,8 +27,6 @@ Rails.application.routes.draw do
       resources :timelists, only: [:create, :destroy]
     end
   end
-
-
 
   namespace :api do
     namespace :v1 do

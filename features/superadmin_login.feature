@@ -13,4 +13,4 @@ Feature: Superadmin log in
         And I fill in "Email" with "info@buildingblockz.se"
         And I fill in "Password" with "123456"
         And I click "Log in"
-        Then I should see "Home"
+        Then I should see "Superadmin dashboard"

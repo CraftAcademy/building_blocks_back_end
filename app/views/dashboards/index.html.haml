@@ -1,5 +1,5 @@
 %h1 Superadmin dashboard
 - @buildings.each do |building|
-  = building.name
-  = building.street
-  %br/
+ =link_to building.name, dashboard_path(building)
+ = building.street
+ %br/

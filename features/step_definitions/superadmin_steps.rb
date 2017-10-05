@@ -9,3 +9,7 @@ Given(/^the following buildings exist in the database$/) do |table|
    create(:building, name: hash[:name], street: hash[:street])
   end
 end
+
+Given(/^I am on the dashboard page$/) do
+  visit dashboards_path
+end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dashboards, only: [:index]
+  resources :dashboards, only: [:index, :show]
 
   post '/', controller: :index, action: :select_building, as: :select_building
 

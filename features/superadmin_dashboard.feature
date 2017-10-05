@@ -26,9 +26,7 @@ Feature: Superadmin dashboard
       And I should see "bighouse"
       Then I should see "bigstreet"
 
-    Scenario: Superadmin turns off a feature
+    Scenario: Superadmin views features of a building
       Given I am on the dashboard page
       And I click link "bighouse"
       Then I should see "Manage bighouse"
-      And I should see "Sauna"
-      And I should see "No towels"

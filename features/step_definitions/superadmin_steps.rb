@@ -13,3 +13,10 @@ end
 Given(/^I am on the dashboard page$/) do
   visit dashboards_path
 end
+
+Given(/^the following facilities exist$/) do |table|
+  building = Building.find_by(name: "bighouse")
+  table.hashes.each do |hash|
+    create(:facility, name: hash[:name], description: hash[:description], building_id: building.id)
+  end
+end

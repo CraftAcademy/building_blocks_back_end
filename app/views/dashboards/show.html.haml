@@ -1,2 +1,6 @@
 %h1 Manage
 %h2= @buildings.name
+%h3 Available facilities
+- @facilities.each do |facility|
+  = facility.name
+  = facility.description

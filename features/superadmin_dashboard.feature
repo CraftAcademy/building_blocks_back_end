@@ -8,22 +8,27 @@ Feature: Superadmin dashboard
       | email                  | password | password_confirmation | role       |
       | info@buildingblockz.se | 123456   | 123456                | superadmin |
     Given the following users exist
-     | email           | password  | password_confirmation | role  |
-     | nubbe@nubbe.com | 12345678  | 12345678              | admin |
+      | email           | password  | password_confirmation | role  |
+      | nubbe@nubbe.com | 12345678  | 12345678              | admin |
     Given the following buildings exist
-     | name        | street      |
-     | bighouse    | bigstreet   |
+      | name        | street    |
+      | bighouse    | bigstreet |
+    Given the following facilities exist
+      | name        | description |
+      | Sauna       | No towels   |
 
     Scenario: Superadmin logs in
-        Given I am on the sign in page
-        And I fill in "Email" with "info@buildingblockz.se"
-        And I fill in "Password" with "123456"
-        And I click "Log in"
-        Then I should see "Superadmin dashboard"
-        And I should see "bighouse"
-        Then I should see "bigstreet"
+      Given I am on the sign in page
+      And I fill in "Email" with "info@buildingblockz.se"
+      And I fill in "Password" with "123456"
+      And I click "Log in"
+      Then I should see "Superadmin dashboard"
+      And I should see "bighouse"
+      Then I should see "bigstreet"
 
     Scenario: Superadmin turns off a feature
       Given I am on the dashboard page
       And I click link "bighouse"
       Then I should see "Manage bighouse"
+      And I should see "Sauna"
+      And I should see "No towels"

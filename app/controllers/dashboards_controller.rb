@@ -5,5 +5,6 @@ class DashboardsController < ApplicationController
 
   def show
     @buildings = Building.find(params[:id])
+    @facilities = Facility.where(building: @buildings)
   end
 end

@@ -1,25 +1,26 @@
 .base
   %h3 Send work order
   - if @help_request == nil
-    = form_for([@building, @workorder]) do |f|
-      .field
-        = f.label :title
-        %br/
-        = f.text_field :title
-      .field
-        = f.label :message
-        %br/
-        = f.text_area :message
-      .field
-        = f.label :location
-        %br/
-        = f.text_field :location
-      .field
-        = f.label :urgent
-        %br/
-        = f.check_box(:urgent, {}, true, false)
-      .actions
-        = f.submit "Send", class: 'round button'
+    - if @workorders.count > 0
+      = form_for([@building, @workorder]) do |f|
+        .field
+          = f.label :title
+          %br/
+          = f.text_field :title
+        .field
+          = f.label :message
+          %br/
+          = f.text_area :message
+        .field
+          = f.label :location
+          %br/
+          = f.text_field :location
+        .field
+          = f.label :urgent
+          %br/
+          = f.check_box(:urgent, {}, true, false)
+        .actions
+          = f.submit "Send", class: 'round button'
   - else
     = form_for @workorder, url: building_workorders_path(@building,help_request_id: @help_request.id),method: 'post' do |f|
       .field

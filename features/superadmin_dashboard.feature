@@ -22,11 +22,17 @@ Feature: Superadmin dashboard
       And I fill in "Email" with "info@buildingblockz.se"
       And I fill in "Password" with "123456"
       And I click "Log in"
-      Then I should see "Superadmin dashboard"
-      And I should see "bighouse"
-      Then I should see "bigstreet"
+      And I should see "Superadmin dashboard"
+      Then I should see "bighouse"
 
     Scenario: Superadmin views features of a building
       Given I am on the dashboard page
+      Given I am logged in as "nubbe@nubbe.com"
       And I click link "bighouse"
       Then I should see "Manage bighouse"
+      And I click link "Add help request"
+      Then I should see "Activate help request feature"
+      And I fill in "Title" with "No pants"
+      And I fill in "Message" with "Great"
+      And I click "Send"
+      Then I should see "New help request sent !!"

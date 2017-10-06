@@ -1,4 +1,11 @@
 News.delete_all
+Facility.delete_all
+Timeslot.delete_all
+Workorder.delete_all
+HelpRequest.delete_all
+User.delete_all
+
+Building.create(name: "Building", street: "Gata")
 
 News.create(title: "Party", description: "Awesome party")
 News.create(title: "Grill", description: "Awesome grill")
@@ -40,3 +47,4 @@ puts "Created #{HelpRequest.count} help_request"
 puts "Created #{Workorder.count} workorders"
 puts "Created #{Timeslot.count} timeslots"
 puts "Created #{User.count} users"
+puts "Created #{Building.count} buildings"

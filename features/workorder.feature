@@ -13,7 +13,9 @@ Feature: Creat a new workorder
   Given the following help request messages exist
     | title   | message           | urgent |
     | Fabian  | Missing phone     | true   |
-
+  Given the following workorder messages exist
+    | title | message | location |
+    | hello | yoho    | aptmnt   |
 
   Scenario: I create and send a work order
     Given I am on the root page

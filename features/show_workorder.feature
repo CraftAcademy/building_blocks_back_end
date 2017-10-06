@@ -10,7 +10,7 @@ Feature: Show workorder
   And the following buildings exist
     | name        | street      |
     | bighouse    | bigstreet   |
-  Given the following work orders messages exist
+  Given the following workorder messages exist
     | title   | message           | urgent | location |
     | Fabian  | Missing phone     | true   | bighouse |
 

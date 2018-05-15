@@ -13,7 +13,7 @@ class UserController < ApplicationController
     @user.building_id = session[:current_building_id]
     if @user.save
       flash[:notice] = "New user created!"
-      redirect_to root_path
+      redirect_back(fallback_location: user_index_path(session[:current_building_id]))
     end
   end
 

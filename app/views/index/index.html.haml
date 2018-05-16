@@ -3,6 +3,14 @@
   = form_tag select_building_path, method: 'post' do |f|
     =select('post', "category", @buildings.distinct.pluck(:name) {|p| [ p.name , p.id ] }, {prompt: 'building'})
     = submit_tag 'Submit', class: 'round button'
+
+%h4 Facilities
+%table
+  %tr
+    - @facilities.each do |facility|
+      %th.help
+        .helph
+          = facility.name
 %table
   %tr
     %th.help

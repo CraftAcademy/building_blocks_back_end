@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928195945) do
+ActiveRecord::Schema.define(version: 20180516120109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "booking_stats", force: :cascade do |t|
+    t.integer  "day"
+    t.integer  "week"
+    t.string   "setting"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "facility_id"
+    t.index ["facility_id"], name: "index_booking_stats_on_facility_id", using: :btree
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.string   "name"
@@ -62,8 +72,8 @@ ActiveRecord::Schema.define(version: 20170928195945) do
     t.datetime "updated_at",                   null: false
     t.boolean  "urgent",       default: false
     t.integer  "workorder_id"
-    t.integer  "user_id"
     t.integer  "building_id"
+    t.integer  "user_id"
     t.string   "name"
     t.index ["building_id"], name: "index_help_requests_on_building_id", using: :btree
     t.index ["user_id"], name: "index_help_requests_on_user_id", using: :btree
@@ -143,6 +153,7 @@ ActiveRecord::Schema.define(version: 20170928195945) do
     t.index ["help_request_id"], name: "index_workorders_on_help_request_id", using: :btree
   end
 
+  add_foreign_key "booking_stats", "facilities"
   add_foreign_key "bookings", "buildings"
   add_foreign_key "bookings", "facilities"
   add_foreign_key "bookings", "users"

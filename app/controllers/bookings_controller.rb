@@ -22,13 +22,21 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(start_time: params[:date],name: 'Admin',facility_id: params[:facility_id], building_id: session[:current_building_id])
+    @booking = Booking.new(start_time: params[:start_date], end_time: params[:end_date], name: 'Admin',facility_id: params[:facility_id], building_id: session[:current_building_id])
     @booking.user_id = current_user.id
 
     respond_to do |format|
       if @booking.save
         format.html { redirect_to building_facility_booking_path(session[:current_building_id], @facility, @booking) , notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
+        @stat = BookingStat.where(facility_id: params[:facility_id], created_at: params[:start_date].to_date)
+        if @stat != []
+          @stat[0].day = @stat[0].day + ((params[:start_date].to_time - params[:end_date].to_time) / 3600).round
+          @stat[0].save
+        else
+          @stat = BookingStat.new(day: ((params[:start_date].to_time - params[:end_date].to_time) / 3600).round, facility_id: params[:facility_id], created_at: params[:start_date].to_date)
+          @stat.save
+      end
       else
         format.html { render :new }
         format.json { render json: @booking.errors, status: :unprocessable_entity }

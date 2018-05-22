@@ -7,10 +7,12 @@
 %h4 Facilities
 %table
   %tr
-    - @facilities.each do |facility|
+    - @facility_stat.each do |facility|
       %th.help
         .helph
-          = facility.name
+          = facility['name']
+          - facility['day'].each do |stats|
+            = stats
 %table
   %tr
     %th.help

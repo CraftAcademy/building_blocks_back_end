@@ -17,6 +17,31 @@ class IndexController < ApplicationController
           @help_requests = HelpRequest.where(urgent: true, building_id: session[:current_building_id]).last(10)
           @news = News.where(building_id: session[:current_building_id]).last(5)
           @facilities = Facility.where(building_id: session[:current_building_id])
+          @facility_stat = Array.new
+          # [:facility, :date, :day1 , :day2, :day3, :day4, :day5, :day6, :day7]
+          @facilities.each do |facility|
+            value = {'name' => facility.name}
+            @b_stats = BookingStat.where(facility_id: facility.id)
+            plus_day = 0
+            days = Array.new
+            date_list = Array.new
+            until plus_day == 7
+              date = @b_stats.where(created_at: Date.today + plus_day)
+              if date[0] == nil
+                days.push(0)
+              else
+                days.push(date[0].day)
+              end
+              date_list.push(Date.today + plus_day)
+              plus_day += 1
+            end
+            value['days'] = days
+            value['dates'] = date_list
+            binding.pry
+            @facility_stat << value
+          end
+
+          @b_stats = BookingStat.all
           @workorder = Workorder.where(building_id: session[:current_building_id]).last(5)
         end
       end

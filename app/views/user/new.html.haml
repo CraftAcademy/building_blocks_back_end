@@ -25,12 +25,11 @@
         %em
           (#{@minimum_password_length} characters minimum)
       %br/
-      = f.hidden_field :password, autocomplete: "off", value: @code
+      = f.password_field :password, autocomplete: "off"
     .field
       - f.label :password_confirmation
       %br/
-      = f.hidden_field :password_confirmation, autocomplete: "off", value: @code
-    .actions
+      = f.password_field :password_confirmation, autocomplete: "off"
       = f.submit "Sign up", class: 'round button'
       %br/
       %br/

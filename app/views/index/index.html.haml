@@ -8,7 +8,7 @@
 %table
   %tr
     - @facility_stat.each do |facility|
-      %th.help
+      %th
         .helph
           = facility['name']
           %table.some(style='border: 1px solid #dddddd')
@@ -19,8 +19,9 @@
 
             %tr
               - facility['days'].each do |date, stats|
-                %th.some(style='width: 14%;')
-                  = date.to_date.strftime('%b:%d')
+                %th.help(style='width: 14%;')
+                  %p
+                    = date.to_date.strftime('%b:%d')
 %table
   %tr
     %th.help

@@ -23,21 +23,20 @@ class IndexController < ApplicationController
             value = {'name' => facility.name}
             @b_stats = BookingStat.where(facility_id: facility.id)
             plus_day = 0
-            days = Array.new
+            days = Hash.new
             date_list = Array.new
             until plus_day == 7
               date = @b_stats.where(created_at: Date.today + plus_day)
               if date[0] == nil
-                days.push(0)
+                days["#{Date.today + plus_day}"] = 0
               else
-                days.push(date[0].day)
+                days["#{Date.today + plus_day}"] = date[0].day
               end
-              date_list.push(Date.today + plus_day)
+
               plus_day += 1
             end
             value['days'] = days
-            value['dates'] = date_list
-            binding.pry
+
             @facility_stat << value
           end
 

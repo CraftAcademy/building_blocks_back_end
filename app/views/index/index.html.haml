@@ -11,8 +11,16 @@
       %th.help
         .helph
           = facility['name']
-          - facility['day'].each do |stats|
-            = stats
+          %table.some(style='border: 1px solid #dddddd')
+            %tr
+              - facility['days'].each do |date, stats|
+                %th.some(style='height: 100px; vertical-align: bottom; padding-bottom: 0px; width: 14%;')
+                  %div.some(style="height: #{stats}px; background-color: lightblue; width: 90%;")
+
+            %tr
+              - facility['days'].each do |date, stats|
+                %th.some(style='width: 14%;')
+                  = date.to_date.strftime('%b:%d')
 %table
   %tr
     %th.help

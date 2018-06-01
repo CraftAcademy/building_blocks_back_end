@@ -15,6 +15,7 @@ class WorkordersController < ApplicationController
 
   def new
     @building = Building.find(session[:current_building_id])
+    @workorders = Workorder.where(building: @building)
     @workorder = Workorder.new
     if params[:format]
       @help_request = HelpRequest.find(params[:format])

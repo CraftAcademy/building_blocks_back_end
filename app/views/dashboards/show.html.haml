@@ -1,0 +1,3 @@
+%h1 Manage
+%h2= @buildings.name
+= link_to 'Add help request', new_building_help_request_path(@buildings.id), class: 'round button'

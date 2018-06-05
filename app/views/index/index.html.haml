@@ -1,75 +1,49 @@
-- if @building_name
-  = @building_name.name
-  = form_tag select_building_path, method: 'post' do |f|
-    =select('post', "category", @buildings.distinct.pluck(:name) {|p| [ p.name , p.id ] }, {prompt: 'building'})
-    = submit_tag 'Submit', class: 'round button'
-
-%h4 Facilities
 %table
   %tr
-    - @facility_stat.each do |facility|
-      %th
-        .helph
-          = facility['name']
-          %table.some(style='border: 1px solid #dddddd')
-            %tr
-              - facility['days'].each do |date, stats|
-                %th.some(style='height: 100px; vertical-align: bottom; padding-bottom: 0px; width: 14%;')
-                  %div.some(style="height: #{stats}px; background-color: lightblue; width: 90%;")
-
-            %tr
-              - facility['days'].each do |date, stats|
-                %th.help(style='width: 14%;')
-                  %p
-                    = date.to_date.strftime('%b:%d')
-%table
+    %th
+      %h5 Urgent Help requests
+    %th
+      %h5 Latest News
+    %th
+      %h5 Bookings in Procent
   %tr
-    %th.help
-      .helph
-        %h4 Urgent Help requests
-    %th.news
-      .newsh
-        %h4 Latest News
-    %th.work
-      .workh
-        %h4  Work orders status
-  %tr
-    %th.help
+    %th
       - @help_requests.each do |help|
         .card
           .card-divider
             - if help.urgent == true
               .stat_red
+            - if help.workorder_id == nil
+              .create-button
+                - if session[:current_building_id]
+                  = link_to 'Create work order' , new_building_workorder_path(session[:current_building_id], help.id), class: 'button secondary tiny'
             = help.title
-            %br
+          .card-section
             = help.name
-            %hr/
-            %p.help
+            %p
               = help.message
-          - if help.workorder_id == nil
-            - if session[:current_building_id]
-              = link_to 'Create work order' , new_building_workorder_path(session[:current_building_id], help.id), class: 'button tiny inc'
-            %br
-    %th.news
+    %th
       - @news.each do |news|
         .card
           .card-divider
             = news.title
-            %hr/
-            %p
-              = news.description
+          .card-section
+            = news.description
 
-    %th.work
-      - @workorder.each do |work|
+    %th
+      - @facility_stat.each do |facility|
         .card
           .card-divider
-            - if work.status == 'Done'
-              .stat_green
-            -elsif work.status == 'In progress'
-              .stat_yellow
-            -elsif work.status == 'Unable to complete'
-              .stat_red
-            = work.title
-            %hr/
-            %p.work
-              = work.message
+            = facility['name']
+          .card-section(style='background-color: #585858;')
+            %table(style='border: 1px solid #dddddd;')
+              %tr
+                - facility['days'].each do |date, stats|
+                  %th.some(style='height: 100px; vertical-align: bottom; padding-bottom: 0px; width: 14%;')
+                    %div.some(style="height: #{stats}px; background-color: #23c1a0; width: 90%;")
+              %tr
+                - facility['days'].each do |date, stats|
+                  %th.help(style='width: 14%; align: center;')
+                    %div(style='align: center;')
+                      %p
+                        = date.to_date.strftime('%b %d')

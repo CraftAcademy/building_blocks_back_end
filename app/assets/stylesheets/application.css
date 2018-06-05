@@ -14,6 +14,7 @@
  *= require_self
  *= require foundation_and_overrides
  */
+ 
  .head {
    padding: 5px;
    text-align: center;
@@ -27,6 +28,8 @@
  html,body{
   margin:0;
   padding:0;
+  color: white;
+  background-color: #585858;
 }
 
 .pageContentWrapper {
@@ -43,6 +46,12 @@
     right: 0;
     height: 25px;
     font-family: sans-serif;
+
+}
+
+.change_building {
+  padding-left: 10px;
+  width: 210px;
 
 }
 
@@ -98,21 +107,33 @@
     position: absolute;
 }
 
+.building_name_style {
+  color: #fff;
+}
+
 
 .card {
-  font-family: 'Verdana', sans-serif;
   width: 100%;
+  align-items: flex-start;
   /*box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);*/
 }
 
 th {
   width: 30%;
-  background-color: #fefefe;
   vertical-align: top;
 }
 
-.card.work {
-  width: 400px;
+.align-top {
+  vertical-align: top;
+  align-content: center;
+}
+
+.create-button {
+  padding-top: 5px;
+  font-size:8px;
+  color:#fff;
+  text-align:center;
+  position: relative;
 }
 
 .alert {
@@ -189,22 +210,10 @@ th {
   padding: 4px;
 }*/
 
-.newh {
-  padding: 4px;
-  background-color: #444;
-  color: #fff;
-}
-
-
 h4, h3 {
   font-family: sans-serif;
   text-align: center;
   font-size: 32px;
-}
-
-
-.card-divider {
-  background-color: #fff;
 }
 
 .round.button {
@@ -237,16 +246,6 @@ h4, h3 {
   border-radius: 6px;
 }
 
-p {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 15px;
-  text-align: left;
-}
-
-p.help, .work, .booking {
-  text-align: center;
-}
-
 .nisse {
   position: absolute;
     left: 53%;
@@ -258,12 +257,13 @@ ul {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #585858;
+    color: white;
 }
 
 li a {
     display: block;
-    color: #000;
+    color: white;
     padding: 8px 16px;
     text-decoration: none;
 }

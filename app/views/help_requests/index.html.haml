@@ -12,4 +12,4 @@
         %br
         %br
         = link_to "Create work order", new_building_workorder_path(session[:current_building_id], help.id), class: 'button tiny inc'
-        = link_to "Delete", "/help_requests/#{help.id})", method: :delete, class: 'button tiny alert'
+        = link_to "Delete", "/buildings/#{session[:current_building_id]}/help_requests/#{help.id})", method: :delete, class: 'button tiny alert'

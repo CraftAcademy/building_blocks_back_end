@@ -32,7 +32,6 @@ class IndexController < ApplicationController
               else
                 days["#{Date.today + plus_day}"] = date[0].day
               end
-
               plus_day += 1
             end
             value['days'] = days

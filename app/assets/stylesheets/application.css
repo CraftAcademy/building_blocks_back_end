@@ -14,7 +14,7 @@
  *= require_self
  *= require foundation_and_overrides
  */
- 
+
  .head {
    padding: 5px;
    text-align: center;
@@ -194,16 +194,10 @@ th {
   color: #666;
 }
 
-.large-4.medium-4.columns {
-  padding: 4px;
-  float: left;
-  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  text-align: center;
-  font-family: 'Verdana', sans-serif;
-}
 
 .base{
   padding: 10px;
+  color: white;
 }
 
 /*.large-4.medium-4.columns {
@@ -216,6 +210,21 @@ h4, h3 {
   font-size: 32px;
 }
 
+.arrow {
+  margin-left: 10px;
+  position: relative;
+  align-self: center;
+  background-color: transparent;
+  width: 300px;
+  height: 4px;
+}
+
+.total_count {
+  margin-left: 30px;
+  width: 300px;
+  height: 150px;
+}
+
 .round.button {
   color: #23c1a0;
   background-color: #585858;
@@ -224,32 +233,19 @@ h4, h3 {
   border-radius: 6px;
 }
 
-.button.inc {
+.inc {
   color: #23c1a0;
   background-color: #424242;
-  font-family: sans-serif;
+  margin: 0;
 }
 
-.button.tiny.alert {
+.alert {
   color: #F5A9A9;
   background-color: #B40404;
-  font-family: sans-serif;
-  font-size: 15px;
-  border-radius: 6px;
 }
 
-.button.tiny.inc {
-  color: #23c1a0;
-  background-color: #585858;
-  font-family: sans-serif;
-  font-size: 15px;
-  border-radius: 6px;
-}
-
-.nisse {
-  position: absolute;
-    left: 53%;
-    margin-left: -100px;
+.center {
+    text-align: center;
 }
 
 ul {

@@ -22,6 +22,16 @@
             = help.name
             %p
               = help.message
+      .card
+        .card-divider
+          Total Stats
+        .card-section(style='background-color: #585858;')
+          .total_count
+            = image_tag('total_graf.png',  size: "650x100")
+            .arrow(style=" -ms-transform: rotate(#{@total_value}deg); -webkit-transform: rotate(#{@total_value}deg); transform: rotate(#{@total_value}deg);")
+              = image_tag('total_arrow.png',  size: "300x40")
+          
+    %br
     %th
       - @news.each do |news|
         .card

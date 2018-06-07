@@ -25,7 +25,7 @@ class Api::V1::BookingsController < ApiController
             @stat[0].day = @stat[0].day + (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16)
             @stat[0].save
           else
-            @stat = BookingStat.new(day: (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16), facility_id: params[:facility_id], created_at: params[:start_date].to_date)
+            @stat = BookingStat.new(day: (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16), facility_id: params[:facility_id], created_at: @booking.start_time.to_date)
             @stat.save
           end
           render json: {message: 'Your booking has been saved'}
@@ -44,7 +44,7 @@ class Api::V1::BookingsController < ApiController
           @stat[0].day = @stat[0].day + (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16)
           @stat[0].save
         else
-          @stat = BookingStat.new(day: (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16), facility_id: params[:facility_id], created_at: params[:start_date].to_date)
+          @stat = BookingStat.new(day: (((@booking.end_time.to_time - @booking.start_time.to_time) / 3600) * 4.16), facility_id: params[:facility_id], created_at: @booking.start_time.to_date)
           @stat.save
         end
         render json: {message: 'Your booking has been saved'}

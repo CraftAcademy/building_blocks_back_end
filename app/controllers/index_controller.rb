@@ -41,7 +41,9 @@ class IndexController < ApplicationController
 
             @facility_stat << value
           end
-          @total_value = (@total_stat / @facilities.count) * 1.8
+          if @facilities && @total_stat
+            @total_value = (@total_stat.to_f / @facilities.count.to_f) * 1.8
+          end
           @b_stats = BookingStat.all
           @workorder = Workorder.where(building_id: session[:current_building_id]).last(5)
         end

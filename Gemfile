@@ -18,6 +18,7 @@ gem 'foundation_rails_helper', '~> 3.0'
 gem 'devise_token_auth'
 gem 'simple_calendar'
 gem 'ice_cube'
+gem 'material_icons'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -19,7 +19,8 @@ RSpec.describe Api::V1::FacilitiesController, type: :request do
         'description' => 'Hot hot Sauna',
         'rules' => 'No windows',
         'status' => true,
-        'bok_dur' => nil
+        'bok_dur' => nil,
+        "icon"=>nil
         }]
 
       expect(response_json).to eq expected_response

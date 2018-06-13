@@ -1,6 +1,7 @@
 class Facility < ApplicationRecord
   validates_presence_of :name, :description
   has_many :bookings, :dependent => :destroy
+  has_many :booking_stat, :dependent => :destroy
   has_many :timeslots, :dependent => :destroy
   has_many :timelists, :dependent => :destroy
   belongs_to :building

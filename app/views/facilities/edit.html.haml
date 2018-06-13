@@ -2,17 +2,18 @@
   %h3 Create a new facility
   = form_for ([@building, @facility]) do |f|
     .field
-      = f.label :name
-      %br/
       = f.text_field :name, value: @facility.name
     .field
-      = f.label :description
-      %br/
       = f.text_area :description, value: @facility.description
     .field
-      = f.label :rules
-      %br/
       = f.text_field :rules, value: @facility.rules
+    .field
+      %i.material-icons local_laundry_service
+      = f.radio_button :icon, 'local_laundry_service'
+      %i.material-icons spa
+      = f.radio_button :icon, 'spa'
+      %i.material-icons tab
+      = f.radio_button :icon, 'tab'
     .field
       = f.label 'Available'
       = f.check_box(:status, {}, true, false)
@@ -20,7 +21,7 @@
       = f.label 'Dynamiska bookning'
       = f.select :dyntime, ['on', 'off']
     .field
-      = f.label "range of days for booking"
+      = f.label "Ad time limit to the booking"
       %br/
       %br/
       = f.select :bok_dur, ['1','2','3','4','5','365']
@@ -30,4 +31,4 @@
       %br/
       = f.select :bok_day, ['1','2','3','4','5','6']
     .actions
-      = f.submit "Submit", class: 'round button'
+      = f.submit "Submit", class: 'button inc'

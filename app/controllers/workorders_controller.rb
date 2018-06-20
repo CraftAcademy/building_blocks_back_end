@@ -9,7 +9,7 @@ class WorkordersController < ApplicationController
     if params[:status] != ''
       @workorder.update(status: params[:status])
       flash[:notice] = "Work order status updated"
-      redirect_back(fallback_location: workorders_path)
+      redirect_back(fallback_location: building_workorder_path(session[:current_building_id]))
     end
   end
 

@@ -4,18 +4,21 @@
     - @workorders.each do |work|
       .large-4.medium-4.columns
         .card
-          .newh
+          .card-divider
             - if work.urgent == true
               .stat_urgent
-            = work.title
-        %h4 Message
-        = work.message
-        %br
-        %h4 Location
-        = work.location
-        %br
-        %br
-        = form_tag building_workorder_path(@building, work.id), {method: :patch} do
-          = label_tag 'Set status'
-          = select_tag :status, options_for_select(['In progress','Unable to complete','Done'], selected: work.status)
-          = submit_tag "Update status", class: 'round button'
+            %h4
+              = work.title
+          .card-section
+            %h5 Message
+            = work.message
+            %br
+            %br
+            %h5 Location
+            = work.location
+            %br
+            %br
+            = form_tag building_workorder_path(@building, work.id), {method: :patch} do
+              = label_tag 'Set status'
+              = select_tag :status, options_for_select(['In progress','Unable to complete','Done'], selected: work.status)
+              = submit_tag "Update status", class: 'button inc'

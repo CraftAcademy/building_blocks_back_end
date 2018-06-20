@@ -15,7 +15,7 @@ class IndexController < ApplicationController
         else
           @building_name = Building.find(session[:current_building_id])
           @help_requests = HelpRequest.where(urgent: true, building_id: session[:current_building_id]).last(2)
-          @news = News.where(building_id: session[:current_building_id]).last(5)
+          @news = News.where(building_id: session[:current_building_id]).last(2)
           @facilities = Facility.where(building_id: session[:current_building_id])
           @facility_stat = Array.new
           @total_stat = 0

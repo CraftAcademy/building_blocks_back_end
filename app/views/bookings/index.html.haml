@@ -10,8 +10,11 @@
           = date.strftime('%d')
           - bookings.each do |booking|
             .cal
-              = booking.name
-              = booking.start_time.strftime('%H:%M')
+              %h7
+                = booking.name
+                = booking.start_time.strftime('%H:%M')
+                = '-'
+                = booking.end_time.strftime('%H:%M')
 .row
   .div
     %table

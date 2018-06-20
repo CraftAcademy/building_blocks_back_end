@@ -37,7 +37,12 @@ RSpec.describe Api::V1::FacilitiesController, type: :request do
         'id' => facility.id,
         'description' => 'Hot hot Sauna',
         'rules' => 'No windows',
-        'bok_dur' => nil, 'dyntime' => nil, 'count' => 0, 'min' => 'min'
+        'bok_dur' => nil,
+        'dyntime' => nil,
+        'icon'=>nil,
+        'maxBookings'=>nil,
+        'count' => 0,
+        'min' => 'min'
         }
 
       expect(response_json).to eq expected_response

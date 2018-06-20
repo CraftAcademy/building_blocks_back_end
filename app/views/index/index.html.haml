@@ -22,15 +22,28 @@
             = help.name
             %p
               = help.message
-      .card
-        .card-divider
-          Total Stats
-        .card-section(style='background-color: #585858;')
-          .total_count
-            = image_tag('total_graf.png',  size: "650x100")
-            .arrow(style=" -ms-transform: rotate(#{@total_value}deg); -webkit-transform: rotate(#{@total_value}deg); transform: rotate(#{@total_value}deg);")
-              = image_tag('total_arrow.png',  size: "300x40")
-          
+      %h5 Workorders
+      - @workorder.each do |work|
+        .card
+          .card-divider
+            - if work.status == 'Done'
+              .stat_green
+            - elsif work.status == 'In progress'
+              .stat_yellow
+            - elsif work.status == 'Unable to complete'
+              .stat_red
+            = work.title
+      %hr
+      .card(style='width: 390px;')
+        .card
+          .card-divider
+            Total Stats
+          .card-section(style='background-color: #585858;')
+            .total_count
+              = image_tag('total_graf.png',  size: "650x100")
+              .arrow(style=" -ms-transform: rotate(#{@total_value}deg); -webkit-transform: rotate(#{@total_value}deg); transform: rotate(#{@total_value}deg);")
+                = image_tag('total_arrow.png',  size: "300x40")
+            %br
     %br
     %th
       - @news.each do |news|

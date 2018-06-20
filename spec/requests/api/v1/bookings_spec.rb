@@ -35,15 +35,16 @@ RSpec.describe "Bookings", type: :request do
 
        params = {
          name: 'Nisse',
-         start_time: '2017-04-01',
+         start_time: '2017-04-01T12:09:00.000Z',
          building_id: building.id,
+         end_time: '2017-04-01T12:11:00.000Z',
          user_id: @user.id
                  }
 
        post "/api/v1/facilities/#{facility.id}/bookings", params
 
        expect(response.code).to eq '200'
-       object = Booking.find_by(name: 'Nisse', start_time: '2017-04-01')
+       object = Booking.find_by(name: 'Nisse', start_time: '2017-04-01T12:09:00.000Z')
        expect(object).to be_persisted
      end
      it 'should render code 400 on failure' do

@@ -17,7 +17,7 @@ class UserController < ApplicationController
     if @user.save
       flash[:notice] = "New user created!"
       UserMailer.welcome_email(@user).deliver
-      redirect_to root_path
+      redirect_back(fallback_location: user_index_path(session[:current_building_id]))
     end
   end
 
